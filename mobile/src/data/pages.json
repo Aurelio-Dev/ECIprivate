@@ -1,0 +1,4694 @@
+{
+  "index": {
+    "title": "Esporte Clube Itapetininga",
+    "blocks": [
+      {
+        "type": "anchor",
+        "id": "hero"
+      },
+      {
+        "type": "image",
+        "src": "img/testehero.jpeg",
+        "alt": "Comissão técnica do Esporte Clube Itapetininga durante um treino"
+      },
+      {
+        "type": "text",
+        "tag": "h1",
+        "text": "Esporte Clube Itapetininga"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "FILIADO À FEDERAÇÃO PAULISTA DE FUTEBOL"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "BOTÕES COM O MESMO TAMANHO E MAIORES"
+      },
+      {
+        "type": "link",
+        "text": "Como Apoiar arrow_forward",
+        "href": "#apoie-modal"
+      },
+      {
+        "type": "link",
+        "text": "Conheça a História",
+        "href": "#history"
+      },
+      {
+        "type": "anchor",
+        "id": "history"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Desde 1950"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Nossa História"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Esporte Clube Itapetininga é o sucessor e herdeiro do lendário DERAC, fundado em 1950, um clube que marcou época no futebol paulista elevando o nome de Itapetininga em competições de elite como as séries A2 e A3 do Paulistão."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Nossa missão é honrar esse passado glorioso enquanto construímos um futuro sólido para os jovens atletas de Itapetininga e região."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "➜ Único clube da região filiado à Federação Paulista de Futebol."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "➜ Referência em formação técnica e cidadã."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "➜ História viva do esporte em Itapetininga!"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Fundação"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "O clube nasceu em 26 de dezembro de 1950, ainda como DERAC - Departamento de Estradas de Rodagem Atlético Clube."
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Tradição Competitiva"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Por décadas, participou dos campeonatos da Federação Paulista de Futebol nas divisões Série A2, Série A3 e Segunda Divisão de Profissionais."
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Nova Identidade"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Em 1995, passou a se chamar Esporte Clube Itapetininga, fortalecendo o vínculo com a cidade."
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Base e Futuro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Hoje, o foco está nas categorias de base e no futuro retorno ao profissional."
+      },
+      {
+        "type": "image",
+        "src": "img/time2.jpeg",
+        "alt": "Elenco histórico do Esporte Clube Itapetininga em campo, década de 1980"
+      },
+      {
+        "type": "text",
+        "tag": "figcaption",
+        "text": "Arquivo Histórico Elenco em campo • registro do acervo do clube"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Histórias que marcaram gerações"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Grandes Nomes Nossa História"
+      },
+      {
+        "type": "image",
+        "src": "img/Vadao_2015.jpg",
+        "alt": "Retrato de Vadão"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Treinador"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Vadão"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ex-Técnico Seleção Brasileira Feminina"
+      },
+      {
+        "type": "image",
+        "src": "img/itabera.jpg",
+        "alt": "Retrato de Carlinhos Itaberá"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Lateral"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Carlinhos Itaberá"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ex-Fluminense"
+      },
+      {
+        "type": "image",
+        "src": "img/marquinho.jpg",
+        "alt": "Retrato de Marquinhos"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Marquinhos"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ex-Ferroviária de Araraquara"
+      },
+      {
+        "type": "image",
+        "src": "img/carlinhos.webp",
+        "alt": "Retrato de Carlinhos Angatuba"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Atacante"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Carlinhos Angatuba"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ex-Esporte Clube Bahia"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Arquivo Histórico"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Nossa História em Imagens"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Cada imagem guarda um capítulo da nossa trajetória dentro e fora de campo."
+      },
+      {
+        "type": "image",
+        "src": "img/1950.jpg",
+        "alt": "Registro histórico das origens do clube como DERAC"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "As Raízes"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Os primeiros passos de uma história de sucesso."
+      },
+      {
+        "type": "image",
+        "src": "img/time7.jpeg",
+        "alt": "Registro da transição do DERAC para o Esporte Clube Itapetininga"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Transição DERAC - ECI"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "O início de uma nova fase de competições."
+      },
+      {
+        "type": "image",
+        "src": "img/time4.jpeg",
+        "alt": "Atletas da base no Campeonato Sul Paulista representando o legado atual"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Legado Contínuo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Foco no desenvolvimento da base e projetos sociais transformadores."
+      },
+      {
+        "type": "anchor",
+        "id": "categories"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "PÁGINA 1: Introdução"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "COLUNA ESQUERDA (Textos e Imagem)"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Formação Integral"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Futebol de Base"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "\"Formando cidadãos através do esporte e desenvolvendo talentos com metodologia científica e sistêmica.\""
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "IMAGEM COM BORDA FORÇADA NO STYLE"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "ATENÇÃO: Troque o nome da imagem abaixo"
+      },
+      {
+        "type": "image",
+        "src": "img/base.jpg",
+        "alt": "Equipe da Base"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "COLUNA DIREITA (Box Superior e Botões Animados)"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "BLOCO SUPERIOR"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "O Esporte Clube Itapetininga"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Desenvolve a sua base através de duas frentes complementares:"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Nossos Pilares"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "ESTILO GARANTIDO PARA A ANIMAÇÃO"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Botão 1: Iniciação"
+      },
+      {
+        "type": "link",
+        "text": "diversity_3 Projeto Iniciação Esportiva e Inclusão Social arrow_forward",
+        "href": "#pilar-iniciacao"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Botão 2: Rendimento"
+      },
+      {
+        "type": "link",
+        "text": "sports_soccer Projeto Alto Rendimento e Especialização Tática arrow_forward",
+        "href": "#pilar-rendimento"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "PÁGINA 2: Iniciação & Inclusão"
+      },
+      {
+        "type": "anchor",
+        "id": "pilar-iniciacao"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Iniciação & Inclusão"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Futebol de Base"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "INSCRIÇÕES GRATUITAS"
+      },
+      {
+        "type": "image",
+        "src": "img/time6.png",
+        "alt": "Projeto Social EC Itapetininga"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Projeto de Iniciação Esportiva e Inclusão Social"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Iniciação Técnica"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "SUB 11"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Foco no desenvolvimento motor, cognitivo e no aprendizado dos fundamentos básicos."
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Desenvolvimento"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "SUB 13"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Foco no aperfeiçoamento técnico, controle de bola sob pressão e iniciação tática."
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Inclusão Contínua"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "SUB 15 (Social)"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Foco na permanência no esporte, saúde e cidadania, garantindo a continuação do desenvolvimento."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "O Projeto do EC Itapetininga une a iniciação esportiva qualificada à inclusão social, utilizando o futebol como ferramenta pedagógica e de cidadania. Nosso foco vai além das quatro linhas: acolhemos jovens em um ambiente seguro, estimulando a disciplina, o respeito e a resiliência. Mais do que formar atletas através de treinamentos estruturados, trabalhamos para blindar o futuro da nossa juventude, combatendo a ociosidade e transformando vidas com dignidade e saúde."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "PÁGINA 3: Alto Rendimento"
+      },
+      {
+        "type": "anchor",
+        "id": "pilar-rendimento"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Formação de Atletas"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Futebol de Base"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "\"Desenvolvendo talentos locais e da região com metodologia sistêmica e científica , garantindo acesso democrático ao esporte de alto nível.\""
+      },
+      {
+        "type": "image",
+        "src": "img/time8.jpeg",
+        "alt": "Alto Rendimento EC Itapetininga"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Alto Rendimento e Especialização Tática"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Rendimento"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "SUB 15"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Foco no rendimento absoluto, ingresso ao futebol competitivo e introdução à tática e ao modelo de jogo."
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Especialização"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "SUB 17"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Foco na cultura tática e coletiva da equipe e na máxima exigência competitiva para o rendimento de elite."
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Alta Performance"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "SUB 20"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Foco na transição para o profissional, atuando em alta performance sob máxima exigência física, tática e mental."
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Projeto Futuro"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Projeção Profissional"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "SUB 23"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Projeto futuro e estratégico para transição final dos atletas servindo de vitrine para o mercado e investidores."
+      },
+      {
+        "type": "anchor",
+        "id": "contact"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Fale Conosco"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Estamos à disposição para esclarecer dúvidas sobre treinos, parcerias ou doações."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Centro de Treinamento"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "R. Ana Maria Ferreira Baltazar, 705 - Jardim Shangri-La Itapetininga - SP, 18208-580"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "E-mail"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "contato@ecitapetininga.com.br"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Instagram"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "@ecitape_oficial"
+      },
+      {
+        "type": "link",
+        "text": "@ecitape_oficial",
+        "href": "https://www.instagram.com/ecitape_oficial/"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Atendimento"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Seg. a Sex., 9h às 17h"
+      },
+      {
+        "type": "anchor",
+        "id": "contact-form"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Nome completo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "E-mail"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Assunto"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Mensagem"
+      },
+      {
+        "type": "anchor",
+        "id": "contact-form-message"
+      }
+    ]
+  },
+  "index2": {
+    "title": "Index2",
+    "blocks": [
+      {
+        "type": "anchor",
+        "id": "hero"
+      },
+      {
+        "type": "image",
+        "src": "img/testehero.jpeg",
+        "alt": "Comissão técnica do Esporte Clube Itapetininga durante um treino"
+      },
+      {
+        "type": "text",
+        "tag": "h1",
+        "text": "Esporte Clube Itapetininga"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "FILIADO À FEDERAÇÃO PAULISTA DE FUTEBOL"
+      },
+      {
+        "type": "link",
+        "text": "Como Apoiar arrow_forward",
+        "href": "#apoie-modal"
+      },
+      {
+        "type": "link",
+        "text": "Conheça a História",
+        "href": "#history"
+      },
+      {
+        "type": "anchor",
+        "id": "history"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Desde 1950"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Nossa História"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Esporte Clube Itapetininga é o sucessor e herdeiro do lendário DERAC, fundado em 1950, um clube que marcou época no futebol paulista elevando o nome de Itapetininga em competições de elite como as séries A2 e A3 do Paulistão."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Nossa missão é honrar esse passado glorioso enquanto construímos um futuro sólido para os jovens atletas de Itapetininga e região."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "➜ Único clube da região filiado à Federação Paulista de Futebol."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "➜ Referência em formação técnica e cidadã."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "➜ História viva do esporte em Itapetininga!"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Fundação"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "O clube nasceu em 26 de dezembro de 1950, ainda como DERAC - Departamento de Estradas de Rodagem Atlético Clube."
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Tradição Competitiva"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Por décadas, participou dos campeonatos da Federação Paulista de Futebol nas divisões Série A2, Série A3 e Segunda Divisão de Profissionais."
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Nova Identidade"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Em 1995, passou a se chamar Esporte Clube Itapetininga, fortalecendo o vínculo com a cidade."
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Base e Futuro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Hoje, o foco está nas categorias de base e no futuro retorno ao profissional."
+      },
+      {
+        "type": "image",
+        "src": "img/time2.jpeg",
+        "alt": "Elenco histórico do Esporte Clube Itapetininga em campo, década de 1980"
+      },
+      {
+        "type": "text",
+        "tag": "figcaption",
+        "text": "Arquivo Histórico Elenco em campo • registro do acervo do clube"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Histórias que marcaram gerações"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "WCAG fix: 1.3.1"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Grandes Nomes Nossa História"
+      },
+      {
+        "type": "image",
+        "src": "img/Vadao_2015.jpg",
+        "alt": "Retrato de Vadão"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Treinador"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Vadão"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ex-Técnico Seleção Brasileira Feminina"
+      },
+      {
+        "type": "image",
+        "src": "img/itabera.jpg",
+        "alt": "Retrato de Carlinhos Itaberá"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Lateral"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Carlinhos Itaberá"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ex-Fluminense"
+      },
+      {
+        "type": "image",
+        "src": "img/marquinho.jpg",
+        "alt": "Retrato de Marquinhos"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Marquinhos"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ex-Ferroviária de Araraquara"
+      },
+      {
+        "type": "image",
+        "src": "img/carlinhos.webp",
+        "alt": "Retrato de Carlinhos Angatuba"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Atacante"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Carlinhos Angatuba"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ex-Esporte Clube Bahia"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Arquivo Histórico"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Nossa História em Imagens"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Cada imagem guarda um capítulo da nossa trajetória dentro e fora de campo."
+      },
+      {
+        "type": "image",
+        "src": "img/1950.jpg",
+        "alt": "Registro histórico das origens do clube como DERAC"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "As Raízes"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Os primeiros passos de uma história de sucesso."
+      },
+      {
+        "type": "image",
+        "src": "img/time7.jpeg",
+        "alt": "Registro da transição do DERAC para o Esporte Clube Itapetininga"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Transição DERAC - ECI"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "O início de uma nova fase de competições."
+      },
+      {
+        "type": "image",
+        "src": "img/time4.jpeg",
+        "alt": "Atletas da base no Campeonato Sul Paulista representando o legado atual"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Legado Contínuo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Foco no desenvolvimento da base e projetos sociais transformadores."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "INÍCIO DA NOVA SEÇÃO BASE MODULAR"
+      },
+      {
+        "type": "anchor",
+        "id": "categories"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "PÁGINA 1: Introdução"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Formação Integral"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Futebol de Base"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "\"Formando cidadãos através do esporte e desenvolvendo atletas com metodologia científica e sistêmica.\""
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "O Esporte Clube Itapetininga desenvolve a sua base através de duas frentes complementares:"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Nossos Pilares"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "LINK PARA A PÁGINA 2"
+      },
+      {
+        "type": "link",
+        "text": "Projeto Iniciação Esportiva e Inclusão Social",
+        "href": "#pilar-iniciacao"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "LINK PARA A PÁGINA 3"
+      },
+      {
+        "type": "link",
+        "text": "Alto Rendimento e Especialização Tática",
+        "href": "#pilar-rendimento"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "PÁGINA 2: Iniciação & Inclusão"
+      },
+      {
+        "type": "anchor",
+        "id": "pilar-iniciacao"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Coluna da Esquerda"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Iniciação & Inclusão"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Futebol de Base"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "INSCRIÇÕES GRATUITAS"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "IMAGEM DA PÁGINA 2"
+      },
+      {
+        "type": "image",
+        "src": "img/time5.jpeg",
+        "alt": "Projeto Social EC Itapetininga"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Coluna da Direita"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Projeto de Iniciação Esportiva e Inclusão Social"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Iniciação Técnica"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "SUB 11"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Foco no desenvolvimento motor, cognitivo e no aprendizado dos fundamentos básicos."
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Desenvolvimento"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "SUB 13"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Foco no aperfeiçoamento técnico, controle de bola sob pressão e iniciação tática."
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Inclusão Contínua"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "SUB 15 (Social)"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Foco na permanência no esporte, saúde e cidadania, garantindo a continuação do desenvolvimento."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "O Projeto do EC Itapetininga une a iniciação esportiva qualificada à inclusão social, utilizando o futebol como ferramenta pedagógica e de cidadania. Nosso foco vai além das quatro linhas: acolhemos jovens em um ambiente seguro, estimulando a disciplina, o respeito e a resiliência. Mais do que formar atletas através de treinamentos estruturados, trabalhamos para blindar o futuro da nossa juventude, combatendo a ociosidade e transformando vidas com dignidade e saúde."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "PÁGINA 3: Alto Rendimento"
+      },
+      {
+        "type": "anchor",
+        "id": "pilar-rendimento"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Coluna da Esquerda"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Formação de Atletas"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Futebol de Base"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "\"Desenvolvendo talentos locais e da região com metodologia sistêmica e científica , garantindo acesso democrático ao esporte de alto nível.\""
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "IMAGEM DA PÁGINA 3 (Ajustada para a nova imagem do time)"
+      },
+      {
+        "type": "image",
+        "src": "img/time8.jpeg",
+        "alt": "Alto Rendimento EC Itapetininga"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Coluna da Direita"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Alto Rendimento e Especialização Tática"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Rendimento"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "SUB 15"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Foco no rendimento absoluto, ingresso ao futebol competitivo e introdução à tática e ao modelo de jogo."
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Especialização"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "SUB 17"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Foco na cultura tática e coletiva da equipe e na máxima exigência competitiva para o rendimento de elite."
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Alta Performance"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "SUB 20"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Foco na transição para o profissional, atuando em alta performance sob máxima exigência física, tática e mental."
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Projeto Futuro"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Projeção Profissional"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "SUB 23"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Projeto futuro e estratégico para transição final dos atletas servindo de vitrine para o mercado e investidores."
+      },
+      {
+        "type": "anchor",
+        "id": "contact"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "COLUNA DA ESQUERDA (Textos, Ícones e Mapa Original)"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Fale Conosco"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Estamos à disposição para esclarecer dúvidas sobre treinos, parcerias ou doações."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sede Social (Ocupa a linha toda)"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Centro de Treinamento"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "R. Ana Maria Ferreira Baltazar, 705 - Jardim Shangri-La Itapetininga - SP, 18208-580"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Grade para E-mail e Instagram Lado a Lado"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "E-mail"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "contato@ecitapetininga.com.br"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Instagram"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "@ecitapetininga"
+      },
+      {
+        "type": "link",
+        "text": "@ecitapetininga",
+        "href": "https://www.instagram.com/ecitape_oficial/"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "NOVO: Horário de Atendimento"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Atendimento"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Seg. a Sex., 9h às 17h"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Mapa Original"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "WCAG fix: 1.1.1"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "COLUNA DA DIREITA (Formulário Original com Borda Cinza)"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Formulário atualizado com FormSubmit"
+      },
+      {
+        "type": "anchor",
+        "id": "contact-form"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Configurações ocultas do FormSubmit"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Nome completo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "E-mail"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Assunto"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Mensagem"
+      },
+      {
+        "type": "anchor",
+        "id": "contact-form-message"
+      }
+    ]
+  },
+  "index3": {
+    "title": "Index3",
+    "blocks": [
+      {
+        "type": "anchor",
+        "id": "hero"
+      },
+      {
+        "type": "image",
+        "src": "img/DSC00051-copia.jpg",
+        "alt": "Comissão técnica do Esporte Clube Itapetininga durante um treino"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Desde 1950"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Itapetininga / SP"
+      },
+      {
+        "type": "text",
+        "tag": "h1",
+        "text": "Esporte Clube Itapetininga"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Há 75 anos formando atletas e cidadãos em Itapetininga."
+      },
+      {
+        "type": "link",
+        "text": "Conheça a História",
+        "href": "#history"
+      },
+      {
+        "type": "anchor",
+        "id": "history"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Desde 1950"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Nossa História"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Do DERAC ao Esporte Clube Itapetininga: uma trajetória construída por futebol, cidade e formação de atletas."
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Fundação"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "O clube nasceu em 26 de dezembro de 1950, ainda como DERAC — Departamento de Estradas de Rodagem Atlético Clube."
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Tradição Competitiva"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Por décadas, participou dos campeonatos da Federação Paulista de Futebol nas divisões Série A2, Série A3 e Segunda Divisão de Profissionais."
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Nova Identidade"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Em 1994, passou a se chamar Esporte Clube Itapetininga, fortalecendo o vínculo com a cidade."
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Base e Futuro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Hoje, atua no Campeonato Paulista de Base nas categorias Sub-13, Sub-15 e Sub-17."
+      },
+      {
+        "type": "image",
+        "src": "img/time.jpeg",
+        "alt": "Equipe histórica do Esporte Clube Itapetininga"
+      },
+      {
+        "type": "image",
+        "src": "img/jersey.png",
+        "alt": "Camisa oficial do Esporte Clube Itapetininga"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Histórias que marcaram gerações"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "WCAG fix: 1.3.1"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Grandes Nomes Nossa História"
+      },
+      {
+        "type": "image",
+        "src": "img/Vadao_2015.jpg",
+        "alt": "Retrato de Vadão"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Treinador"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Vadão"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ex-Técnico Seleção Brasileira Feminina"
+      },
+      {
+        "type": "image",
+        "src": "img/itabera.jpg",
+        "alt": "Retrato de Carlinhos Itaberá"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Lateral"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Carlinhos Itaberá"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ex-Fluminense"
+      },
+      {
+        "type": "image",
+        "src": "img/marquinho.jpg",
+        "alt": "Retrato de Marquinhos"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Marquinhos"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ex-Ferroviária de Araraquara"
+      },
+      {
+        "type": "image",
+        "src": "img/carlinhos.webp",
+        "alt": "Retrato de Carlinhos Angatuba"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Atacante"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Carlinhos Angatuba"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ex-Esporte Clube Bahia"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Arquivo Histórico"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Nossa História em Imagens"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Cada imagem guarda um capítulo da nossa trajetória dentro e fora de campo."
+      },
+      {
+        "type": "image",
+        "src": "img/1950.jpg",
+        "alt": "Registro histórico da fundação do clube em 1950"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "As Raízes"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Os primeiros passos e a união da comunidade para fundar o clube."
+      },
+      {
+        "type": "image",
+        "src": "img/1994.jpg",
+        "alt": "Registro do clube em sua nova fase a partir de 1994"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Profissionalização"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Filiação à FPF e o início de uma nova era de competições."
+      },
+      {
+        "type": "image",
+        "src": "img/hoje.jpg",
+        "alt": "Atletas da base representando o legado atual do clube"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Legado Contínuo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Foco no desenvolvimento da base e projetos sociais transformadores."
+      },
+      {
+        "type": "anchor",
+        "id": "categories"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Formação de Atletas"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Futebol de Base"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Inscrições Gratuitas"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Desenvolvemos talentos locais com metodologia, disciplina e acesso democrático ao esporte de alto nível."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Iniciação"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Sub-11"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Iniciação técnica, coordenação motora e disciplina em ambiente formativo."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Desenvolvimento"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Sub-13"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Desenvolvimento tático e aprimoramento das habilidades individuais."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Performance"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Sub-15"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Alto desempenho físico e estratégico voltado aos campeonatos da FPF."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Transição"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Sub-17"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Etapa final de formação com foco em profissionalização e futuro competitivo."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Acesso"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Sub-20"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Preparação para o futebol profissional com foco em performance física e maturidade tática."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Profissional"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Sub-23"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Equipe profissional em formação, competindo em torneios oficiais da Federação Paulista de Futebol."
+      },
+      {
+        "type": "anchor",
+        "id": "contact"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Fale Conosco"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Estamos à disposição para esclarecer dúvidas sobre treinos, parcerias ou doações."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sede Social"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Rua Ana Maria Ferreira Baltazar, Jd Shangri-La - Itapetininga, SP"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "E-mail"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "contato@ecitapetininga.com.br"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "WCAG fix: 1.1.1"
+      },
+      {
+        "type": "anchor",
+        "id": "contact-form"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "WCAG fix: 3.3.2"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Nome completo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "WCAG fix: 3.3.2"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "E-mail"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "WCAG fix: 3.3.2"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Assunto"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "WCAG fix: 3.3.2"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Mensagem"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Mensagem registrada. Entraremos em contato em breve.",
+        "id": "contact-form-message"
+      }
+    ]
+  },
+  "404": {
+    "title": "Página Não Encontrada - EC Itapetininga",
+    "blocks": [
+      {
+        "type": "text",
+        "tag": "h1",
+        "text": "Erro 404"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Página não encontrada"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ops! A página ainda esta em contrução. Vamos voltar para o campo de jogo?"
+      },
+      {
+        "type": "link",
+        "text": "home Voltar ao Início",
+        "href": "index.html"
+      }
+    ]
+  },
+  "diretoria": {
+    "title": "Diretoria Executiva - EC Itapetininga",
+    "blocks": [
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "CABEÇALHO DA PÁGINA (LIMPO E INSTITUCIONAL)"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Gradiente suave do azul escuro para um tom levemente mais claro"
+      },
+      {
+        "type": "text",
+        "tag": "h1",
+        "text": "Diretoria Executiva"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "A gestão responsável e apaixonada que constrói o futuro do maior patrimônio esportivo de Itapetininga."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "SEÇÃO: MENSAGEM DO PRESIDENTE"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Foto do Presidente"
+      },
+      {
+        "type": "image",
+        "src": "img/presidente.jpeg",
+        "alt": "Presidente do EC Itapetininga"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Adilson Ramos"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Presidente do Clube"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Risquinho Amarelo Fino (h-1)"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Mensagem"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Mensagem do Presidente"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Assumir a presidência do Esporte Clube Itapetininga é, antes de tudo, honrar uma tradição de glórias que se iniciou em 1950. Sabemos do peso que essa camisa tem para a nossa cidade e da responsabilidade que carregamos."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Nossa visão de futuro é muito clara: o resgate do nosso futebol com um trabalho de excelência. Nosso compromisso inegociável atua em duas frentes: a inclusão social tirando jovens das ruas e formando cidadãos de caráter; e o esporte de alto rendimento , lapidando talentos locais com metodologia profissional."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Para que isso seja possível, implementamos uma gestão moderna, blindada por uma rigorosa transparência financeira e pelo fiel cumprimento às leis de incentivo. Cada centavo investido no clube é um investimento direto no futuro da nossa juventude."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "\"O EC Itapetininga é de todos nós. Juntos, continuaremos fazendo história.\""
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "SEÇÃO: MEMBROS DA DIRETORIA"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Composição da Diretoria"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Grid de Diretores"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Diretor 1"
+      },
+      {
+        "type": "image",
+        "src": "img/eci.png",
+        "alt": "Vice-Presidente"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Lucas Medeiros Bacon"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Vice-Presidente"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Diretor 2"
+      },
+      {
+        "type": "image",
+        "src": "img/eci.png",
+        "alt": "Secretário Executivo"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Gilson Rebouças Conegundes"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Secretário Executivo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Diretor 3"
+      },
+      {
+        "type": "image",
+        "src": "img/eci.png",
+        "alt": "Diretor de Futebol"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Roberto Claro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Diretor de Futebol"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Diretor 4"
+      },
+      {
+        "type": "image",
+        "src": "img/eci.png",
+        "alt": "Diretor Social"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Paulo Santiago França"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Diretor Social"
+      }
+    ]
+  },
+  "governanca": {
+    "title": "Governança e Garantias - EC Itapetininga",
+    "blocks": [
+      {
+        "type": "text",
+        "tag": "h1",
+        "text": "Garantias Institucionais e Governança"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Transparência, responsabilidade e segurança jurídica. Os pilares que sustentam a parceria entre o Esporte Clube Itapetininga e nossos investidores, seja via Leis de Incentivo ou Patrocínio Direto."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "COLUNA 1"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "workspace_premium Responsabilidade Técnica e Operacional"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "badge Profissionais Credenciados e Licença CBF"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Atividades lideradas por profissionais graduados com registro ativo no CREF e treinadores qualificados com Licença B da CBF (Confederação Brasileira de Futebol). Isso assegura uma execução técnica e tática de excelência, chancelada pelos maiores órgãos do esporte."
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "security Gestão de Risco e Integridade"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Nossa equipe carrega anos de experiência prática comprovada na formação de jovens atletas e desenvolvimento de talentos da base . Atuamos com metodologias rigorosamente supervisionadas que anulam riscos operacionais e protegem a imagem institucional dos nossos apoiadores."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "COLUNA 2"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "gavel Segurança Jurídica e Governança"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "policy Ambiente Controlado e Seguro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Rígida conformidade com as diretrizes do Estatuto da Criança e do Adolescente (ECA). Possuímos protocolos internos restritos que blindam a integridade física de nossos jovens atletas e garantem a proteção absoluta das marcas patrocinadoras."
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "request_quote Gestão e Transparência Fiscal"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Prestação de contas rigorosamente alinhada às exigências das Leis de Incentivo ao Esporte (Federal - LIE e Paulista - LPIE) , além de total lisura e relatórios periódicos para aportes e patrocínios diretos. Transparência fiscal comprovada."
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "eco Alinhamento com Agenda ESG"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Investimento conectado diretamente a indicadores reais de impacto, unindo inclusão social e formação de atletas. Nossa governança agrega valor ético tangível, fortalecendo estrategicamente o pilar 'S' (Social) do programa de sustentabilidade da sua empresa."
+      }
+    ]
+  },
+  "infraestrutura": {
+    "title": "Infraestrutura - EC Itapetininga",
+    "blocks": [
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "CABEÇALHO DA PÁGINA"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Nossos Espaços e Instalações"
+      },
+      {
+        "type": "text",
+        "tag": "h1",
+        "text": "Nossa Infraestrutura"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Graças à nossa parceria estratégica com a ADFMI , dispomos de uma estrutura poliesportiva completa que atualmente passa por um plano abrangente de modernização e reformas. Nosso compromisso é entregar instalações adequadas para o desenvolvimento dos nossos atletas, unindo a tradição do nosso passado com a evolução do nosso presente, enquanto planejamos o nosso patrimônio próprio para o futuro."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "SEÇÃO: ESPAÇOS DO CLUBE (GRID DE CARDS)"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Conheça Nossas Instalações"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ambientes preparados para dar suporte técnico, físico, administrativo e social aos nossos jovens talentos."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Card 1: Campo Principal"
+      },
+      {
+        "type": "image",
+        "src": "img/campo1.jpg",
+        "alt": "Campo Principal"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sede Esportiva"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Campo Principal"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "O palco principal do nosso futebol. Atualmente passando por etapas de ampliação e revitalização do gramado para garantir treinos e partidas com alto padrão de qualidade técnica."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Card 2: Quadra Poliesportiva"
+      },
+      {
+        "type": "image",
+        "src": "img/quadra.jpg",
+        "alt": "Quadra Poliesportiva"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Multiuso"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Quadra Poliesportiva"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Espaço dinâmico e versátil, utilizado para atividades complementares, treinamentos técnicos reduzidos e projetos de iniciação esportiva da base."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Card 3: Academia"
+      },
+      {
+        "type": "image",
+        "src": "img/academia.jpg",
+        "alt": "Academia"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Preparação Física"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Espaço Fitness / Academia"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Área dedicada ao fortalecimento muscular, prevenção de lesões e acompanhamento de cargas físicas essenciais para o rendimento dos atletas."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Card 4: Escritório Administrativo"
+      },
+      {
+        "type": "image",
+        "src": "img/escritorio.jpg",
+        "alt": "Escritório"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Governança"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Escritório & Gestão"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "O centro de comando da nossa Diretoria Executiva. Onde são tratadas as pautas jurídicas, financeiras, planejamento de leis de incentivo e transparência."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Card 5: Cozinha e Apoio Social"
+      },
+      {
+        "type": "image",
+        "src": "img/cozinha.png",
+        "alt": "Cozinha e Apoio"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Suporte Social"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Cozinha e Espaço de Convivência"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Reforçando o nosso compromisso com o pilar social e humano, dispomos de estrutura para atendimento e suporte nutricional aos atletas durante as atividades diárias do clube."
+      }
+    ]
+  },
+  "etica": {
+    "title": "Código de Ética e Conduta - EC Itapetininga",
+    "blocks": [
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Compliance Institucional"
+      },
+      {
+        "type": "text",
+        "tag": "h1",
+        "text": "Código de Ética e Conduta"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Muito além das quatro linhas. O compromisso inegociável do Esporte Clube Itapetininga com a integridade, o respeito e a transparência em todas as suas ações."
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Nossos Pilares de Atuação"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Acreditamos que o esporte é a maior ferramenta de transformação social do mundo. Por isso, exigimos de nossa diretoria, comissão técnica, atletas e parceiros comerciais uma conduta que honre as tradições de Itapetininga e promova um ambiente seguro e justo para todos."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "GRID DE PILARES"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Pilar 1"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Respeito e Inclusão"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Tolerância zero contra qualquer tipo de discriminação, racismo ou assédio. Nossas portas estão abertas para todos, garantindo um ambiente acolhedor e igualitário."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Pilar 2"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Jogo Limpo (Fair Play)"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Defendemos a integridade absoluta do esporte. Repudiamos e combatemos práticas de doping, manipulação de resultados e corrupção desportiva."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Pilar 3"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Proteção aos Jovens"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Cumprimento rigoroso do Estatuto da Criança e do Adolescente (ECA). Nossos atletas da base treinam em um ecossistema blindado que prioriza a saúde e a educação."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Pilar 4"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Transparência Institucional"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Administração ética dos recursos do clube, sejam eles provenientes de Leis de Incentivo (LIE/LPIE) ou patrocínios diretos, com prestação de contas pública."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "BLOCO DE DOWNLOAD"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Acesse o Documento Completo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Conheça em detalhes todas as regras, deveres e procedimentos disciplinares que norteiam as atividades do Esporte Clube Itapetininga. O documento oficial está disponível para leitura e download de toda a comunidade."
+      },
+      {
+        "type": "link",
+        "text": "download Baixar Código de Ética (PDF)",
+        "href": "codigo_etica.pdf"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Revisado e atualizado pela Diretoria Estatutária."
+      }
+    ]
+  },
+  "transparencia": {
+    "title": "Transparência Financeira — EC Itapetininga",
+    "blocks": [
+      {
+        "type": "anchor",
+        "id": "main-content"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Hero"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Governança & Prestação de Contas"
+      },
+      {
+        "type": "text",
+        "tag": "h1",
+        "text": "Transparência Financeira",
+        "id": "transp-page-title"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Em observância aos preceitos de transparência e governança, o Esporte Clube Itapetininga submete à publicidade suas demonstrações financeiras e balancetes patrimoniais referentes a cada período contábil."
+      },
+      {
+        "type": "link",
+        "text": "arrow_back Voltar ao site",
+        "href": "index.html"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Bloco 2026"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "2026"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Documentos referentes ao período contábil de 2026 . Os arquivos estão disponíveis para download em formato PDF."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "CARD: BALANCETE PATRIMONIAL"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Balancete Patrimonial"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "PDF"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Em breve"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "CARD: DEMONSTRAÇÕES FINANCEIRAS"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Demonstrações Financeiras"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "PDF"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Em breve"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "CARD: COTAÇÃO PRÉVIA (HISTÓRICO) - MOVIDO PARA O FINAL"
+      },
+      {
+        "type": "link",
+        "text": "history Cotação Prévia (Aprovação) Encerrado description Ver Cotação",
+        "href": "img/cotacao.jpg"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Nota legal"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Os documentos acima são disponibilizados voluntariamente pelo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Esporte Clube Itapetininga"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "como parte do seu compromisso com a transparência e a boa governança."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Para dúvidas ou solicitações adicionais, entre em contato pelo e-mail"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "diretoria@ecitapetininga.com.br"
+      }
+    ]
+  },
+  "comissao": {
+    "title": "Comissão Técnica - EC Itapetininga",
+    "blocks": [
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "CABEÇALHO DA PÁGINA"
+      },
+      {
+        "type": "text",
+        "tag": "h1",
+        "text": "Comissão Técnica"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Metodologia profissional, rigor físico e dedicação integral no treinamento dos atletas do Esporte Clube Itapetininga."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "EM CONSTRUÇÃO"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "SEÇÃO: TREINADORES PRINCIPAIS"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Treinadores"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Comando técnico especializado por categoria."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Treinador 1"
+      },
+      {
+        "type": "image",
+        "src": "img/eci.png",
+        "alt": "Treinador"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Nome do Treinador"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Treinador Sub-15"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Licença CBF"
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "check_circle Formação em Educação Física e Esportes"
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "check_circle Especialista em Metodologia de Formação de Base"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Treinador 2"
+      },
+      {
+        "type": "image",
+        "src": "img/eci.png",
+        "alt": "Treinador"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Nome do Treinador"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Treinador Sub-17"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Licença CBF"
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "check_circle Experiência em competições estaduais"
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "check_circle Foco em transição e alto rendimento"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "SEÇÃO: AUXILIARES TÉCNICOS"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Auxiliares Técnicos"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Auxiliar 1"
+      },
+      {
+        "type": "image",
+        "src": "img/eci.png",
+        "alt": "Auxiliar Técnico"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Nome do Auxiliar"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Auxiliar Técnico"
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "check_circle Suporte direto à comissão e análise de desempenho"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Auxiliar 2"
+      },
+      {
+        "type": "image",
+        "src": "img/eci.png",
+        "alt": "Auxiliar Técnico"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Nome do Auxiliar"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Auxiliar Técnico"
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "check_circle Suporte direto à comissão e integração da base"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "SEÇÃO: SUPORTE TRANSVERSAL (AGORA COM 4 COLUNAS!)"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Suporte e Desempenho"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Equipe especializada que atende de forma integrada todas as categorias."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Mudei aqui para lg:grid-cols-4 e max-w-7xl para os 4 boxes caberem perfeitamente!"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Preparador Físico"
+      },
+      {
+        "type": "image",
+        "src": "img/eci.png",
+        "alt": "Preparador Físico"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Nome do Profissional"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Preparador Físico"
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "check_circle Atendimento integrado Sub-15 e Sub-17"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Preparador de Goleiros"
+      },
+      {
+        "type": "image",
+        "src": "img/eci.png",
+        "alt": "Preparador de Goleiros"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Nome do Profissional"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Prep. de Goleiros"
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "check_circle Treinamento específico para goleiros"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Fisioterapeuta"
+      },
+      {
+        "type": "image",
+        "src": "img/eci.png",
+        "alt": "Fisioterapeuta"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Nome do Profissional"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Fisioterapeuta"
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "check_circle Prevenção de lesões e reabilitação"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Auxiliar de Enfermagem (O NOVO BOX AQUI!)"
+      },
+      {
+        "type": "image",
+        "src": "img/eci.png",
+        "alt": "Auxiliar de Enfermagem"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Nome do Profissional"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Aux. Enfermagem"
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "check_circle Primeiros socorros e assistência médica"
+      }
+    ]
+  },
+  "metodologia": {
+    "title": "Metodologia - EC Itapetininga",
+    "blocks": [
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "CABEÇALHO DA PÁGINA"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "O DNA ECI"
+      },
+      {
+        "type": "text",
+        "tag": "h1",
+        "text": "Nossa Metodologia"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Acreditamos que o futebol é a maior ferramenta de transformação social do país. Por isso, nosso planejamento de formação é rigorosamente estruturado em dois grandes pilares , respeitando a maturação biológica, social e esportiva de cada jovem desde os seus primeiros passos até o limiar do profissionalismo."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "SEÇÃO: OS DOIS PILARES"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Pilar 1: Iniciação e Inclusão"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Cabeçalho do Card: Ícone + Título + Etiqueta agrupados"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Iniciação e Inclusão"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Atletas de 10 aos 15 anos"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "O Projeto une a iniciação esportiva e a inclusão social, utilizando o futebol como poderosa ferramenta pedagógica e de cidadania. Mais do que revelar talentos, nosso propósito nesta etapa é formar caráter."
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "verified Atendimento Gratuito: Acesso democrático às nossas atividades esportivas e sociais."
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "verified Saúde e Qualidade de Vida: Iniciação técnica esportiva totalmente integrada à promoção do bem-estar."
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "verified Acompanhamento Pedagógico: Monitoramento de disciplina, frequência escolar ativa e desenvolvimento do espírito de equipe."
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "verified Proteção Integral: Atuação firme e direta na prevenção contra a ociosidade e a vulnerabilidade social."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Pilar 2: Alto Rendimento"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Cabeçalho do Card: Ícone + Título + Etiqueta agrupados"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Alto Rendimento"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15 e Sub-17"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "O degrau da especialização. Aqui, os atletas entram em um regime metodológico rigoroso e comparável a equipes profissionais. O nível de exigência tática, técnica e física sobe drasticamente, visando a alta performance."
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "verified Competitividade: Preparação focada no desempenho em competições estaduais e torneios de elite da categoria."
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "verified Inteligência Tática: Compreensão profunda do modelo de jogo do clube e tomada de decisão rápida sob pressão."
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "verified Preparação Integrada: Treinamentos físicos individualizados, prevenção de lesões, nutrição e fisioterapia."
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "verified Transição: Lapidação final visando o mercado profissional e integração com grandes vitrines do futebol."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "SEÇÃO: VISÃO DE FUTURO (META SUB-20)"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Planejamento Estratégico"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "PROJETO SUB-20 2027/2028"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "A estruturação sólida dos pilares atuais pavimenta o nosso caminho para o futuro. O planejamento diretor do Esporte Clube Itapetininga projeta a implementação da categoria Sub-20 entre as temporadas de 2027 e 2028 . Este será o último degrau metodológico antes do futebol profissional, retendo nossos melhores talentos e recolocando definitivamente Itapetininga no mapa do futebol paulista de alto nível."
+      }
+    ]
+  },
+  "peneiras": {
+    "title": "Peneiras e Avaliações - EC Itapetininga",
+    "blocks": [
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "CABEÇALHO DA PÁGINA"
+      },
+      {
+        "type": "text",
+        "tag": "span",
+        "text": "Seja um Atleta"
+      },
+      {
+        "type": "text",
+        "tag": "h1",
+        "text": "Seletivas e Avaliações"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "O Esporte Clube Itapetininga está sempre de portas abertas para os jovens da nossa cidade e região. Entenda como funciona a organização de vagas e avaliações em cada uma de nossas categorias."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "QUADROS DE AVISO E INFORMAÇÃO INSTITUCIONAL"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "1. TÍTULO CENTRALIZADO"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Como fazer parte?"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "2. GRID COM OS DOIS BOXES (INICIAÇÃO E ALTO RENDIMENTO)"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Box 1: Iniciação"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Tarja Azul Claro"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "PROJETO DE INICIAÇÃO E INCLUSÃO (10 a 15 anos)"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Texto"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Não realizamos peneiras ou testes para esta faixa etária. O atendimento é feito por ordem de inscrição, com capacidade rigorosa de 80 a 100 alunos para garantir a qualidade. Caso as vagas estejam preenchidas, o aluno entra em nossa fila de espera oficial."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Box 2: Alto Rendimento"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Tarja Azul Claro"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "ALTO RENDIMENTO (Sub-15, Sub-17 e Sub-20)"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Texto e Botão"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Para participar das equipes de competição, o acesso é exclusivo através de Avaliações e Seletivas (Peneiras) organizadas pela nossa comissão técnica."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Botão alinhado à direita e no fundo"
+      },
+      {
+        "type": "link",
+        "text": "how_to_reg Faça seu cadastro",
+        "href": "https://forms.gle/Fd6GbHBNTJgFcCT47"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "3. BOX RETANGULAR MAIOR (TRANSPARÊNCIA)"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Transparência e Gratuidade"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "O Esporte Clube Itapetininga NÃO COBRA NENHUMA TAXA para a realização de testes, peneiras, avaliações ou participação no projeto."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Também não possuímos intermediários ou empresários autorizados a agendar testes em nome do clube. Toda comunicação oficial é feita exclusivamente pelos nossos canais diretos."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "SEÇÃO: COMO FUNCIONA AS AVALIAÇÕES DE RENDIMENTO"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Passo a Passo das Seletivas"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Exclusivo para as categorias Sub-15, Sub-17 e futuro Sub-20"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Passo 1"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Fique Atento aos Editais"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Não realizamos avaliações diárias. Acompanhe nossas redes sociais oficiais para o anúncio das próximas turmas, datas e categorias abertas."
+      },
+      {
+        "type": "link",
+        "text": "alternate_email ecitape_oficial",
+        "href": "https://www.instagram.com/ecitape_oficial/"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Passo 2"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Inscrição Prévia"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Preencha o nosso formulário online de cadastro. Como todos os nossos atletas são menores de idade , a inscrição deve ser feita obrigatoriamente pelos pais ou responsáveis legais."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Passo 3"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "O Dia da Avaliação"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Compareça no horário agendado com a documentação exigida. Nossa comissão avalia não apenas a habilidade com a bola, mas o comportamento, o respeito e a capacidade tática."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "SEÇÃO: CHECKLIST DE DOCUMENTOS E BOTÕES FINAIS"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ícone e Título lado a lado"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "O que levar no dia?"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Subtítulo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "A falta de qualquer item abaixo impossibilita a participação por questões legais e de segurança."
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "medical_services Atestado Médico (Obrigatório) Atestado médico válido (emitido nos últimos 90 dias) atestando que está apto fisicamente para a prática de atividades esportivas competitivas."
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "badge Acompanhamento e Documento É obrigatória a presença do pai, mãe ou responsável legal durante a inscrição. Ambos (atleta e responsável) devem apresentar documento de identidade (RG) original."
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "apparel Material de Treino Padrão Chuteira (society ou campo, dependendo do edital), caneleira (uso obrigatório), calção azul e meião azul . Não é permitida a entrada utilizando camisas de outros clubes de futebol."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "CTAs FINAIS (FORMULÁRIO + INSTAGRAM)"
+      },
+      {
+        "type": "link",
+        "text": "how_to_reg Preencher Formulário",
+        "href": "https://forms.gle/Fd6GbHBNTJgFcCT47"
+      },
+      {
+        "type": "link",
+        "text": "campaign Seguir no Instagram",
+        "href": "https://www.instagram.com/ecitape_oficial/"
+      }
+    ]
+  },
+  "privacidade": {
+    "title": "Política de Privacidade - EC Itapetininga",
+    "blocks": [
+      {
+        "type": "text",
+        "tag": "h1",
+        "text": "Política de Privacidade"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Última atualização: Julho de 2026"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "1. Introdução e Compromisso"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "O Esporte Clube Itapetininga valoriza profundamente a privacidade e a segurança das informações de nossos torcedores, atletas, pais, responsáveis e parceiros comerciais. Esta Política de Privacidade tem como objetivo demonstrar nosso compromisso com a transparência e explicar de forma clara como coletamos, utilizamos e protegemos os seus dados quando você visita o nosso site oficial."
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "2. Quais dados nós coletamos?"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Para garantir o funcionamento do nosso portal e o atendimento às suas solicitações, coletamos apenas as informações estritamente necessárias. Através deste site, podemos coletar:"
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "Dados de Contato: Nome completo, endereço de e-mail e informações fornecidas voluntariamente por você ao preencher o nosso formulário na página de \"Fale Conosco\" ou ao solicitar o Estatuto Social."
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "Dados de Navegação (Cookies): Informações básicas e anônimas coletadas automaticamente pelo servidor de hospedagem, como páginas visitadas e tempo de permanência, utilizadas exclusivamente para melhorar a sua experiência de navegação no nosso portal."
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "3. Como usamos esses dados?"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "As informações fornecidas ao clube são tratadas com total sigilo e utilizadas exclusivamente para as seguintes finalidades:"
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "Responder a dúvidas, mensagens, propostas de patrocínio ou solicitações institucionais."
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "Comunicar informações importantes sobre testes, peneiras, inscrições e projetos sociais do clube."
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "Manter um canal de comunicação direto e oficial entre a Diretoria e a comunidade."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Aviso importante: O Esporte Clube Itapetininga jamais comercializa, aluga, troca ou cede seus dados pessoais para empresas terceiras ou agências de publicidade sob nenhuma circunstância."
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "4. Proteção de Dados de Menores e Uso de Imagem"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Como um clube dedicado à formação técnica e cidadã, lidamos diariamente com crianças e adolescentes em nossas categorias de base (Sub-11, Sub-13, Sub-15, etc.). Temos plena consciência da nossa responsabilidade e atuamos sob rigoroso cumprimento da Lei Geral de Proteção de Dados (LGPD) e do Estatuto da Criança e do Adolescente (ECA) ."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Garantimos que nenhum dado pessoal sensível ou imagem individualizada de atletas menores de 18 anos é utilizado, publicado em nosso site ou compartilhado em ações de marketing sem o prévio, expresso e formal consentimento dos pais ou responsáveis legais, concedido mediante assinatura de Termo de Autorização no ato da matrícula presencial."
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "5. Seus Direitos (LGPD)"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Você é o titular dos seus dados e tem total controle sobre eles. A qualquer momento, você pode entrar em contato conosco para exercer os seguintes direitos garantidos por lei:"
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "Solicitar a confirmação de que possuímos seus dados em nosso banco de contatos."
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "Pedir a correção ou atualização de informações incompletas."
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "Solicitar a exclusão definitiva dos seus dados e histórico de e-mails de nossos sistemas."
+      },
+      {
+        "type": "text",
+        "tag": "li",
+        "text": "Revogar o consentimento para uso de imagem (no caso de ex-atletas da base)."
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "6. Contato e Dúvidas"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "A Diretoria do Esporte Clube Itapetininga está sempre de portas abertas. Se você tiver qualquer dúvida sobre esta Política de Privacidade, ou desejar exercer seus direitos sobre seus dados pessoais, por favor, entre em contato através do nosso e-mail oficial:"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "✉️ contato@ecitapetininga.com.br"
+      }
+    ]
+  },
+  "elenco": {
+    "title": "Elenco - Esporte Clube Itapetininga",
+    "blocks": [
+      {
+        "type": "anchor",
+        "id": "topo"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Escudo ECI"
+      },
+      {
+        "type": "text",
+        "tag": "h1",
+        "text": "Elenco Oficial"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Conheça os jovens talentos que representam o Esporte Clube Itapetininga no Campeonato Paulista e Paulista CUP."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "EM CONSTRUÇÃO"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "BOTÃO VOLTAR DO TOPO (Pequeno e alinhado à esquerda!)"
+      },
+      {
+        "type": "link",
+        "text": "arrow_back Voltar ao Site",
+        "href": "index.html"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "FILTROS"
+      },
+      {
+        "type": "filter",
+        "text": "Sub-15"
+      },
+      {
+        "type": "filter",
+        "text": "Sub-17"
+      },
+      {
+        "type": "filter",
+        "text": "Sub-20"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "GALERIA DE ATLETAS"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "============================"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "BLOCO INTEIRO DO SUB-15"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "============================"
+      },
+      {
+        "type": "anchor",
+        "id": "sub15"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "1ª LINHA: GOLEIROS (3)"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Goleiros"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 1"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Goleiro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 2"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Goleiro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 3"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Goleiro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "2ª LINHA: LATERAIS (4)"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Laterais"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 4"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Lateral Direito"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 5"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Lateral Direito"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 6"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Lateral Esquerdo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 7"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Lateral Esquerdo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "3ª LINHA: ZAGUEIROS (4)"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Zagueiros"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 8"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Zagueiro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 9"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Zagueiro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 10"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Zagueiro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 11"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Zagueiro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "4ª LINHA: VOLANTES (3)"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Volantes"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 12"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Volante"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 13"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Volante"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 14"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Volante"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "5ª LINHA: MEIAS (4)"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Meio-Campistas"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 15"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Meio-Campo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 16"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Meio-Campo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 17"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Meio-Campo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 18"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Meio-Campo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "6ª LINHA: PONTAS (4)"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Pontas"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 19"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ponta Direita"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 20"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ponta Direita"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 21"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ponta Esquerda"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 22"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ponta Esquerda"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "7ª LINHA: ATACANTES (3)"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Atacantes"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 23"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Centroavante"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 24"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Centroavante"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-15"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 25"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Centroavante"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "============================"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "BLOCO INTEIRO DO SUB-17"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "============================"
+      },
+      {
+        "type": "anchor",
+        "id": "sub17"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "1ª LINHA: GOLEIROS (3)"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Goleiros"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 1"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Goleiro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 2"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Goleiro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 3"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Goleiro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "2ª LINHA: LATERAIS (4)"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Laterais"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 4"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Lateral Direito"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 5"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Lateral Direito"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 6"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Lateral Esquerdo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 7"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Lateral Esquerdo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "3ª LINHA: ZAGUEIROS (4)"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Zagueiros"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 8"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Zagueiro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 9"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Zagueiro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 10"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Zagueiro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 11"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Zagueiro"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "4ª LINHA: VOLANTES (3)"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Volantes"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 12"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Volante"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 13"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Volante"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 14"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Volante"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "5ª LINHA: MEIAS (4)"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Meio-Campistas"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 15"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Meio-Campo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 16"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Meio-Campo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 17"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Meio-Campo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 18"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Meio-Campo"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "6ª LINHA: PONTAS (4)"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Pontas"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 19"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ponta Direita"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 20"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ponta Direita"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 21"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ponta Esquerda"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 22"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Ponta Esquerda"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "7ª LINHA: ATACANTES (3)"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Atacantes"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 23"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Centroavante"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 24"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Centroavante"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Sub-17"
+      },
+      {
+        "type": "image",
+        "src": "img/elenco/eci.png",
+        "alt": "Sem Foto"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Atleta 25"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Centroavante"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "============================"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "BLOCO INTEIRO DO SUB-20"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "============================"
+      },
+      {
+        "type": "anchor",
+        "id": "sub20"
+      },
+      {
+        "type": "text",
+        "tag": "h4",
+        "text": "Elenco em Formação"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "FIM DA GRID-ELENCO"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "=============================================="
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "BOTÕES DE FIM DE PÁGINA (Mantidos iguais!)"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "=============================================="
+      },
+      {
+        "type": "link",
+        "text": "arrow_upward Voltar ao Topo",
+        "href": "#topo"
+      },
+      {
+        "type": "link",
+        "text": "home Página Inicial",
+        "href": "index.html"
+      }
+    ]
+  },
+  "loja": {
+    "title": "Loja Oficial - Esporte Clube Itapetininga",
+    "blocks": [
+      {
+        "type": "anchor",
+        "id": "topo"
+      },
+      {
+        "type": "image",
+        "src": "img/eci.png",
+        "alt": "Escudo ECI"
+      },
+      {
+        "type": "text",
+        "tag": "h1",
+        "text": "Loja Oficial"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "Vista as cores do nosso clube. Ao adquirir nossos produtos oficiais, você contribui para o futuro da nossa base."
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "EM CONTRUÇÃO"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "BOTÃO VOLTAR"
+      },
+      {
+        "type": "link",
+        "text": "arrow_back Voltar ao Site",
+        "href": "index.html"
+      },
+      {
+        "type": "text",
+        "tag": "h2",
+        "text": "Uniformes e Acessórios"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "VITRINE DE PRODUTOS"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "PRODUTO 1"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Camisa Titular Oficial 2026"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "R$ 0,00"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "COLE O LINK DA INFINITEPAY NO LUGAR DO #"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "PRODUTO 2"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Camisa Reserva Branca"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "R$ 0,00"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "COLE O LINK DA INFINITEPAY NO LUGAR DO #"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "PRODUTO 3"
+      },
+      {
+        "type": "text",
+        "tag": "h3",
+        "text": "Caneca de Porcelana ECI"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "R$ 0,00"
+      },
+      {
+        "type": "text",
+        "tag": "p",
+        "text": "COLE O LINK DA INFINITEPAY NO LUGAR DO #"
+      }
+    ]
+  }
+}
