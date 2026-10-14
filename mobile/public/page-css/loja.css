@@ -1,0 +1,186 @@
+
+    /* ESTILOS BÁSICOS */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+      color: #334155;
+    }
+
+    /* CABEÇALHO DA LOJA COM EFEITO DE VITRINE */
+    .loja-hero {
+      /* A MÁGICA AQUI: Gradiente azul semitransparente + a foto da sua vitrine */
+      background: linear-gradient(rgba(11, 28, 63, 0.85), rgba(23, 42, 90, 0.90)), 
+                  url('img/loja/fundo-vitrine.jpg');
+      background-size: cover;      /* Faz a imagem cobrir o espaço inteiro */
+      background-position: center; /* Centraliza a parte mais importante da foto */
+      background-attachment: fixed; /* Cria o efeito 3D de paralaxe ao rolar a tela */
+      color: white;
+      padding: 4rem 1.5rem 3rem;   /* Aumentei o espaço para aparecer mais a foto do fundo */
+      text-align: center;
+      border-bottom: 0px solid #ffcc00; 
+      position: relative;
+    }
+    .hero-logo {
+      width: 90px;
+      height: auto;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+    .loja-hero h1 {
+      font-size: 2.5rem;
+      margin: 0 0 1rem 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .loja-hero p {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* A LINHA AMARELA FLUTUANTE */
+    .linha-amarela-topo {
+      background-color: #ffcc00; 
+      height: 4px;    
+      width: 150px;   
+      margin-top: 1.5rem;    
+      margin-bottom: 0;      
+      margin-left: auto;     
+      margin-right: auto;    
+      border-radius: 4px; 
+    }
+
+    /* CONTAINER PRINCIPAL */
+    .container {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 3rem;
+    }
+
+    /* BOTÃO VOLTAR */
+    .voltar-topo-container {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 2rem;
+    }
+    .btn-acao-pequeno {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #64748b;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      background-color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s ease;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    .btn-acao-pequeno:hover {
+      border-color: #0b1c3f;
+      background-color: #0b1c3f;
+      color: white;
+    }
+
+    /* TÍTULO DA SEÇÃO DA LOJA */
+    .titulo-secao {
+      text-align: center;
+      font-size: 2rem;
+      color: #0b1c3f;
+      margin-bottom: 3rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+    }
+
+    /* GRID DE PRODUTOS */
+    .grid-produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      justify-items: center;
+    }
+
+    /* CARD DO PRODUTO */
+    .card-produto {
+      width: 100%;
+      max-width: 320px;
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-produto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.15);
+      border-color: #ffcc00;
+    }
+    .produto-foto-container {
+      width: 100%;
+      height: 280px;
+      background-color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+    .produto-foto-real {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Mantém a camisa/caneca inteira visível */
+    }
+    .produto-info {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .produto-nome {
+      font-size: 1.25rem;
+      color: #0b1c3f;
+      margin: 0 0 0.5rem 0;
+      font-weight: 700;
+    }
+    .produto-preco {
+      font-size: 1.5rem;
+      color: #16a34a; /* Verde para destacar valor */
+      font-weight: 800;
+      margin: 0 0 1rem 0;
+    }
+    
+    /* BOTÃO DE COMPRA AUTOMATIZADO (InfinitePay) */
+    .btn-comprar {
+      margin-top: auto; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: #ffcc00; 
+      color: #0b1c3f; 
+      text-decoration: none;
+      font-weight: 800;
+      padding: 0.8rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+    .btn-comprar:hover {
+      background-color: #0b1c3f;
+      color: #ffcc00;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+  

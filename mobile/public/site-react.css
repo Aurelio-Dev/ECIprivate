@@ -1,0 +1,27 @@
+/* Expo's web reset is designed for a React Native ScrollView. These pages
+   retain the original document-scrolling layout and section CSS. */
+html, body, #root { height: auto !important; min-height: 100%; overflow-x: hidden; overflow-y: auto !important; }
+body { margin: 0; }
+.site-header-main { position: relative; }
+.react-admin-entry {
+  position: absolute;
+  top: calc(100% + 0.55rem);
+  right: 1rem;
+  z-index: 30;
+  padding: 0.45rem 0.7rem;
+  color: #fff;
+  background: rgba(0, 18, 65, 0.8);
+  border: 1px solid rgba(252, 204, 0, 0.55);
+  border-radius: 3px;
+  font: 700 0.72rem 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.react-admin-entry:hover, .react-admin-entry:focus-visible { background: #fccc00; color: #001241; }
+@media (max-width: 767px) { .react-admin-entry { display: none; } }
+@media (max-width: 520px) {
+  .hero-title { font-size: clamp(2.9rem, 15.5vw, 4.2rem); }
+  .hero-actions { display: grid !important; grid-template-columns: minmax(0, 1fr); max-width: 100% !important; margin-top: 1.35rem !important; }
+  .hero-actions .hero-button { width: 100%; }
+}

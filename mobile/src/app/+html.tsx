@@ -15,7 +15,8 @@ export default function RootHtml({ children }: PropsWithChildren) {
       <div {...({ 'vw-access-button': '' } as object)} className="active" />
       <div {...({ 'vw-plugin-wrapper': '' } as object)}><div className="vw-plugin-top-wrapper" /></div>
     </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js" async />
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js" />
+    <script dangerouslySetInnerHTML={{ __html: 'if (window.VLibras && !window.__eciVLibras) { window.__eciVLibras = new window.VLibras.Widget("https://vlibras.gov.br/app"); }' }} />
     {bodyNodes}
   </body></html>;
 }
