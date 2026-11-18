@@ -24,11 +24,3 @@ export function localTarget(href: string, currentSlug = 'index') {
   const slug = file ? file.replace(/\.html$/i, '') : currentSlug;
   return { slug: slug || 'index', section: fragment || undefined };
 }
-
-export function upsertById<T extends { id: string }>(items: T[], value: T): T[] {
-  return [...items.filter(item => item.id !== value.id), value];
-}
-
-export function removeById<T extends { id: string }>(items: T[], id: string): T[] {
-  return items.filter(item => item.id !== id);
-}

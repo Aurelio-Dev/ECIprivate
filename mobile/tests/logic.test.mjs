@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { validCredentials, validContact, contactForm, localTarget, upsertById, removeById } from '../src/lib/logic.ts';
+import { validCredentials, validContact, contactForm, localTarget } from '../src/lib/logic.ts';
+import { emptyAdminData, recordMovement, kardex, createLesson, setAttendance, attendanceCounts } from '../src/lib/adminData.ts';
 
 const pages = JSON.parse(readFileSync(new URL('../src/data/webPages.json', import.meta.url), 'utf8'));
 const originalPlaceholders = new Set(['SUA_IMAGEM_AQUI.png', 'camisa-titular.png', 'camisa-reserva.png', 'caneca.png']);
@@ -49,11 +50,32 @@ test('filtro do elenco troca a categoria sem misturar atletas', () => {
   assert.ok(categories[1].children.length > 0);
 });
 
-test('cadastro local de jogos e notícias atualiza e exclui por id', () => {
-  const initial = [{ id: '1', title: 'Antes' }];
-  assert.deepEqual(upsertById(initial, { id: '1', title: 'Depois' }), [{ id: '1', title: 'Depois' }]);
-  assert.deepEqual(upsertById(initial, { id: '2', title: 'Novo' }).length, 2);
-  assert.deepEqual(removeById(initial, '1'), []);
+test('Kardex calcula saldo cronológico e bloqueia saída sem estoque', () => {
+  let data = { ...emptyAdminData(), materials: [{ id: 'bola', name: 'Bola de campo', code: 'ECI-01', unit: 'un', minimum: 3 }] };
+  const movement = (id, date, kind, quantity) => ({ id, materialId: 'bola', date, kind, quantity, reference: 'Treino da base', note: '', createdAt: `2026-11-18T12:00:0${id}Z` });
+  data = recordMovement(data, movement('1', '2026-11-17', 'entrada', 10));
+  data = recordMovement(data, movement('2', '2026-11-18', 'saida', 4));
+  assert.deepEqual(kardex('bola', data.movements).map(row => row.balance), [10, 6]);
+  assert.throws(() => recordMovement(data, { ...movement('5', '2026-11-18', 'entrada', 1), reference: '' }), /referência/);
+  assert.throws(() => recordMovement(data, movement('3', '2026-11-16', 'saida', 1)), /saldo negativo/);
+  assert.throws(() => recordMovement(data, movement('4', '2026-11-18', 'saida', 7)), /saldo negativo/);
+});
+
+test('aula exige descrição e alunos da categoria e preserva frequência individual', () => {
+  const students = [
+    { id: 'a', name: 'Atleta A', category: 'Sub-15', active: true },
+    { id: 'b', name: 'Atleta B', category: 'Sub-15', active: true },
+    { id: 'c', name: 'Atleta C', category: 'Sub-17', active: true },
+  ];
+  const data = { ...emptyAdminData(), students };
+  const input = { id: 'aula', date: '2026-11-18', title: 'Passe e domínio', description: 'Circuito com condução e passe.', category: 'Sub-15', instructorId: '' };
+  assert.throws(() => createLesson(data, { ...input, description: '' }), /descrição/);
+  assert.throws(() => createLesson(data, { ...input, category: 'Sub-20' }), /Cadastre ao menos um aluno/);
+  const lesson = createLesson(data, input);
+  assert.deepEqual(lesson.roster.map(student => student.id), ['a', 'b']);
+  const updated = setAttendance({ ...data, lessons: [lesson] }, 'aula', 'a', 'presente');
+  assert.deepEqual(attendanceCounts(updated.lessons[0]), { pendente: 1, presente: 1, ausente: 0, justificada: 0 });
+  assert.equal(updated.lessons[0].attendance.b, 'pendente');
 });
 
 test('todas as páginas públicas, imagens e links locais foram migrados', () => {
