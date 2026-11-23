@@ -5,7 +5,7 @@ export type Attendance = 'pendente' | 'presente' | 'ausente' | 'justificada';
 
 export type Material = { id: string; name: string; code: string; unit: string; minimum: number };
 export type Movement = { id: string; materialId: string; date: string; kind: MovementKind; quantity: number; reference: string; note: string; createdAt: string };
-export type Student = { id: string; name: string; category: Category; birthDate: string; guardian: string; phone: string; active: boolean };
+export type Student = { id: string; name: string; category: Category; birthDate: string; guardian: string; phone: string; cpf?: string; rg?: string; motherName?: string; fatherName?: string; active: boolean };
 export type Collaborator = { id: string; name: string; role: string; phone: string; email: string; active: boolean };
 export type LessonStudent = { id: string; name: string };
 export type Lesson = { id: string; date: string; title: string; description: string; category: Category; instructorId: string; roster: LessonStudent[]; attendance: Record<string, Attendance> };
