@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { FormEvent } from 'react';
 import Head from 'expo-router/head';
 import { getSession, login } from '../lib/session';
+import WebAccessibility from '../components/WebAccessibility';
 
 export default function WebLogin() {
   const [usuario, setUsuario] = useState('');
@@ -53,5 +54,6 @@ export default function WebLogin() {
         <p className="login-demo"><strong>Ambiente de demonstração:</strong> usuário <code>admin</code>, senha <code>eci2025</code>.</p>
       </section>
     </main>
+    <WebAccessibility />
   </>;
 }
