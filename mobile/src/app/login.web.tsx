@@ -31,6 +31,7 @@ export default function WebLogin() {
       <title>Entrar — Esporte Clube Itapetininga</title><meta name="robots" content="noindex,nofollow" />
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" rel="stylesheet" />
       <link rel="stylesheet" href="/login.css" /><link rel="stylesheet" href="/site-react.css" />
     </Head>
     <a className="skip-link" href="#login-form">Ir para o formulário de acesso</a>

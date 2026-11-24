@@ -41,6 +41,6 @@ export default function WebAccessibility() {
       <button type="button" onClick={() => speak(true)}>🔊 Ler seleção</button>
       <button type="button" onClick={() => window.speechSynthesis.cancel()}>🔇 Parar leitura</button>
     </div>}
-    <button className="eci-web-accessibility-trigger" type="button" aria-label="Abrir menu de acessibilidade" aria-expanded={open} onClick={() => setOpen(value => !value)}><span aria-hidden="true">♿</span></button>
+    <button className="eci-web-accessibility-trigger" type="button" aria-label="Abrir menu de acessibilidade" aria-expanded={open} onClick={() => setOpen(value => !value)}><span className="material-symbols-outlined" aria-hidden="true">accessibility_new</span></button>
   </div>;
 }
