@@ -1,6 +1,6 @@
 .admin-react-loading { padding: 3rem; text-align: center; font: 600 1rem Inter, sans-serif; }
 .admin-page { background: #f3f5f8; }
-.admin-page .admin-shell { grid-template-columns: 260px minmax(0, 1fr); }
+.admin-page .admin-shell { grid-template-columns: 260px minmax(0, 1fr); background: linear-gradient(to right, #0b2a6b 260px, #f3f5f8 260px); }
 .admin-page .admin-nav { display: flex; flex-direction: column; background: #0b2a6b; }
 .eci-nav-eyebrow { padding: 1.6rem 1.5rem .5rem; color: #ffcc00; font: 700 .72rem 'Barlow Condensed', sans-serif; letter-spacing: .18em; }
 .admin-page .admin-nav__list { padding: .35rem 0; }
@@ -115,5 +115,5 @@
 .admin-react-editor-actions button { min-height: 40px; padding: .55rem .85rem; border: 1px solid #0b2a6b; background: #fff; color: #0b2a6b; cursor: pointer; font: 700 .8rem 'Barlow Condensed', sans-serif; text-transform: uppercase; }
 .admin-react-editor-actions button[type=submit] { border-color: #ffcc00; background: #ffcc00; color: #06183f; }
 @media (max-width: 1100px) { .eci-workspace { grid-template-columns: 240px minmax(0, 1fr); } .eci-attendance-row { flex-wrap: wrap; } .eci-attendance-options { width: 100%; margin-left: 1.5rem; } }
-@media (max-width: 899px) { .admin-page .admin-shell { grid-template-columns: 1fr; } .admin-page .admin-nav { display: none; position: static; min-height: 0; max-height: none; } .admin-nav-aberta .admin-nav { display: flex; } .eci-nav-foot { display: none; } .eci-workspace { grid-template-columns: 1fr; } .eci-list-panel { min-height: 0; } }
+@media (max-width: 899px) { .admin-page .admin-shell { grid-template-columns: 1fr; background: #f3f5f8; } .admin-page .admin-nav { display: none; position: static; min-height: 0; max-height: none; } .admin-nav-aberta .admin-nav { display: flex; } .eci-nav-foot { display: none; } .eci-workspace { grid-template-columns: 1fr; } .eci-list-panel { min-height: 0; } }
 @media (max-width: 560px) { .admin-page .admin-main { padding: 1rem; } .eci-heading-crest { width: 48px; height: 56px; } .eci-local-note { align-items: flex-start; flex-direction: column; gap: .2rem; } .eci-stats { grid-template-columns: 1fr 1fr; gap: .55rem; } .eci-stat { min-height: 105px; padding: .8rem; } .eci-stat:last-child { grid-column: 1 / -1; } .eci-stat strong { font-size: 2.15rem; } .eci-person-row { flex-wrap: wrap; } .eci-person-row > div:first-of-type { flex-basis: calc(100% - 60px); } .eci-person-actions { margin-left: auto; } .eci-balance-strip { gap: 1rem; margin-inline: .8rem; padding: .8rem; } .eci-form-grid { grid-template-columns: 1fr; } }
