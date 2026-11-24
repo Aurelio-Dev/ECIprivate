@@ -10,6 +10,20 @@ function validData(value: unknown): value is AdminData {
   return ['materials', 'movements', 'students', 'collaborators', 'lessons'].every(key => Array.isArray(data[key]));
 }
 
+function removeParentNames(data: AdminData): AdminData {
+  return {
+    ...data,
+    students: data.students.map(item => {
+      const clean = { ...item } as StudentWithLegacyParentNames;
+      delete clean.motherName;
+      delete clean.fatherName;
+      return clean;
+    }),
+  };
+}
+
+type StudentWithLegacyParentNames = AdminData['students'][number] & { motherName?: string; fatherName?: string };
+
 export function useAdminStore() {
   const [data, setData] = useState<AdminData>(emptyAdminData);
   const [ready, setReady] = useState(false);
@@ -24,7 +38,7 @@ export function useAdminStore() {
       if (raw) {
         const parsed: unknown = JSON.parse(raw);
         if (!validData(parsed)) throw new Error('Dados locais inválidos');
-        setData(parsed);
+        setData(removeParentNames(parsed));
       }
     }).catch(() => { if (active) { setLoadFailed(true); setError('Não foi possível carregar os registros deste dispositivo. Nenhuma alteração será gravada até resolver o problema.'); } })
       .finally(() => { if (active) setReady(true); });
