@@ -2,6 +2,7 @@ import { createElement, useEffect, useState } from 'react';
 import type { FormEvent, MouseEvent, ReactNode } from 'react';
 import Head from 'expo-router/head';
 import webPages from '../data/webPages.json';
+import WebAccessibility from './WebAccessibility';
 
 type Node = string | { tag: string; props: Record<string, unknown>; children: Node[] };
 type Page = { title: string; bodyClass: string; body: Node[]; styles: string[] };
@@ -142,6 +143,8 @@ export function WebReferencePage({ slug = 'index' }: { slug?: string }) {
     const id = String(props.id || '');
     const className = String(props.className || '');
 
+    if (className.includes('accessibility-panel')) return null;
+
     if (className.split(' ').includes('site-header')) props.className = `${className}${scrolled ? ' header-scrolled' : ''}`;
     if (props['data-nav-link'] !== undefined && typeof props.href === 'string') {
       const target = activeSection === 'pilar-rendimento' ? 'categories' : activeSection;
@@ -216,5 +219,6 @@ export function WebReferencePage({ slug = 'index' }: { slug?: string }) {
       <link rel="stylesheet" href="/site-react.css" />
     </Head>
     {page.body.map((node, index) => render(node, `root-${index}`))}
+    <WebAccessibility />
   </>;
 }

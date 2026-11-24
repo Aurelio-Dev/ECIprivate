@@ -26,7 +26,7 @@ body { margin: 0; }
   .hero-actions .hero-button { width: 100%; }
 }
 .eci-web-accessibility { position: fixed; top: calc(50% - 68px); right: 10px; z-index: 999999; display: flex; align-items: center; }
-.eci-web-accessibility-trigger { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; padding: 0; border: 0; border-radius: 8px; background: #2f82ec; color: #fff; cursor: pointer; box-shadow: 0 3px 10px #00124133; }
+.eci-web-accessibility-trigger { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; min-width: 42px; min-height: 42px; padding: 0; border: 0; border-radius: 8px; background: #2f82ec; color: #fff; cursor: pointer; box-shadow: 0 3px 10px #00124133; }
 .eci-web-accessibility-trigger .material-symbols-outlined { font-size: 24px; line-height: 1; font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
 .eci-web-accessibility-trigger:hover, .eci-web-accessibility-trigger:focus-visible { background: #0b2a6b; outline: 3px solid #ffcc00; outline-offset: 2px; }
 .eci-web-accessibility-menu { position: absolute; right: 52px; top: 0; display: grid; width: 205px; padding: .45rem; border-radius: 8px; background: #fff; box-shadow: 0 4px 18px #00124140; }
