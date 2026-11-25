@@ -2,7 +2,7 @@ import { createElement, useEffect, useState } from 'react';
 import type { FormEvent, MouseEvent, ReactNode } from 'react';
 import Head from 'expo-router/head';
 import webPages from '../data/webPages.json';
-import { absoluteUrl, pageSeo } from '../data/seo';
+import { absoluteUrl, organizationJsonLd, pageSeo } from '../data/seo';
 import WebAccessibility from './WebAccessibility';
 
 type Node = string | { tag: string; props: Record<string, unknown>; children: Node[] };
@@ -241,6 +241,7 @@ export function WebReferencePage({ slug = 'index' }: { slug?: string }) {
     {render(homeHeader, 'shared-header', true)}
     {page.body.map((node, index) => hasClass(node, 'site-header') ? null : render(node, `root-${index}`))}
     {!page.body.some(node => typeof node !== 'string' && node.props.id === 'apoie-modal') && render(homeSupport, 'shared-support')}
+    {page === pages.index && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd).replace(/</g, '\\u003c') }} />}
     <WebAccessibility />
   </>;
 }

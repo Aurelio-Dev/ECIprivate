@@ -4,7 +4,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { validContact, contactForm, localTarget } from '../src/lib/logic.ts';
 import { emptyAdminData, recordMovement, kardex, createLesson, setAttendance, attendanceCounts } from '../src/lib/adminData.ts';
-import { seoPages, SITE_URL } from '../src/data/seo.ts';
+import { seoPages, SITE_URL, organizationJsonLd } from '../src/data/seo.ts';
 
 const pages = JSON.parse(readFileSync(new URL('../src/data/webPages.json', import.meta.url), 'utf8'));
 const originalPlaceholders = new Set(['SUA_IMAGEM_AQUI.png', 'camisa-titular.png', 'camisa-reserva.png', 'caneca.png']);
@@ -120,4 +120,15 @@ test('sitemap.xml lista exatamente as páginas indexáveis e o robots.txt aponta
   assert.match(robots, new RegExp(`^Sitemap: ${SITE_URL.replace(/\./g, '\\.')}/sitemap\\.xml$`, 'm'));
   // As páginas com noindex precisam continuar rastreáveis para o robô ler a tag.
   for (const line of robots.split('\n').filter(entry => entry.startsWith('Disallow:'))) assert.equal(line.trim(), 'Disallow: /_sitemap');
+});
+
+test('JSON-LD da home usa apenas dados publicados no site', () => {
+  const site = JSON.stringify(pages.index.body);
+  const { address, email, taxID, sameAs, logo } = organizationJsonLd;
+  assert.equal(organizationJsonLd['@type'], 'SportsOrganization');
+  assert.ok(!('foundingDate' in organizationJsonLd), 'a data de 1950 se refere ao DERAC');
+  for (const value of [email, taxID, ...sameAs, address.postalCode, 'R. Ana Maria Ferreira Baltazar, 705', 'Jardim Shangri-La', 'Itapetininga - SP']) {
+    assert.ok(site.includes(value), `${value} não aparece na home`);
+  }
+  assert.ok(existsSync(resolve('public', logo.replace(`${SITE_URL}/`, ''))), 'logo do JSON-LD ausente em public/');
 });

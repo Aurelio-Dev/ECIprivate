@@ -76,3 +76,25 @@ export const seoPages: Record<string, PageSeo> = {
 export function pageSeo(slug: string): PageSeo { return seoPages[slug] ?? seoPages['404']; }
 
 export function absoluteUrl(path: string) { return `${SITE_URL}${path}`; }
+
+/** Dados estruturados da home. Só usa informações publicadas no próprio site (contato e rodapé). */
+export const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SportsOrganization',
+  name: 'Esporte Clube Itapetininga',
+  alternateName: 'EC Itapetininga',
+  url: `${SITE_URL}/`,
+  logo: `${SITE_URL}/img/eci.png`,
+  sport: 'Futebol',
+  email: 'contato@ecitapetininga.com.br',
+  taxID: '01.077.813/0001-42',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'R. Ana Maria Ferreira Baltazar, 705 - Jardim Shangri-La',
+    addressLocality: 'Itapetininga',
+    addressRegion: 'SP',
+    postalCode: '18208-580',
+    addressCountry: 'BR',
+  },
+  sameAs: ['https://www.instagram.com/ecitape_oficial/'],
+};
