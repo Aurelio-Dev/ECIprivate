@@ -98,9 +98,11 @@ test('todas as páginas públicas, imagens e links locais foram migrados', () =>
 test('metadados de SEO cobrem todas as páginas web', () => {
   const webPages = Object.keys(pages).filter(slug => !['login', 'admin'].includes(slug));
   assert.deepEqual(Object.keys(seoPages).sort(), webPages.sort());
+  assert.deepEqual(Object.keys(seoPages).filter(slug => !seoPages[slug].index).sort(), ['404', 'comissao', 'elenco', 'index2', 'index3', 'loja']);
   const paths = new Set();
   for (const [slug, seo] of Object.entries(seoPages)) {
     if (seo.description) assert.ok(seo.description.length <= 155, `${slug}: descrição com ${seo.description.length} caracteres`);
+    if (seo.index) assert.ok(seo.path && seo.description, `${slug}: página indexável sem caminho ou descrição`);
     if (!seo.path) continue;
     assert.equal(seo.path, slug === 'index' ? '/' : `/${slug}.html`, `${slug}: caminho inesperado`);
     assert.ok(!paths.has(seo.path), `${slug}: caminho repetido`);
