@@ -2,37 +2,42 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { randomBytes, scryptSync } from 'node:crypto';
 import { spawn } from 'node:child_process';
-import { createConnection } from 'mysql2/promise';
-import { connectionOptions } from '../src/db.js';
+import pg from 'pg';
 import { migrateUsers } from '../src/user-migration.js';
 
 // A base é criada exclusivamente para este teste e nunca usa DB_NAME da aplicação.
-test('migração e gestão de usuários com MySQL isolado', { skip: process.env.ECI_RUN_DB_TESTS !== '1', timeout: 60000 }, async () => {
+test('migração e gestão de usuários com Postgres isolado', { skip: process.env.ECI_RUN_DB_TESTS !== '1', timeout: 60000 }, async () => {
+  // Importado aqui para que o teste seja pulado sem erro quando DATABASE_URL não existir.
+  const { databaseUrl, ssl } = await import('../src/db.js');
   const name = `eci_test_${randomBytes(6).toString('hex')}`;
   const admin = `admin_${randomBytes(5).toString('hex')}`;
   const pass = randomBytes(24).toString('base64url');
   const newPass = randomBytes(24).toString('base64url');
   const operator = `operador_${randomBytes(5).toString('hex')}`;
-  const root = await createConnection(connectionOptions);
+  const testUrl = new URL(databaseUrl);
+  testUrl.pathname = `/${name}`;
+  const root = new pg.Client({ connectionString: databaseUrl, ssl });
+  await root.connect();
   let db, server, created = false;
   try {
-    await root.query(`CREATE DATABASE \`${name}\``);
+    await root.query(`CREATE DATABASE ${name}`);
     created = true;
-    db = await createConnection({ ...connectionOptions, database: name });
-    await db.query('CREATE TABLE eci_users (id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, username VARCHAR(100) NOT NULL UNIQUE, password_hash VARCHAR(200) NOT NULL) ENGINE=InnoDB');
-    await db.query('CREATE TABLE eci_sessions (token_hash CHAR(64) PRIMARY KEY, user_id BIGINT UNSIGNED NOT NULL, expires_at DATETIME NOT NULL, FOREIGN KEY (user_id) REFERENCES eci_users(id) ON DELETE CASCADE) ENGINE=InnoDB');
-    await db.query('CREATE TABLE eci_revision (id TINYINT PRIMARY KEY, version BIGINT UNSIGNED NOT NULL) ENGINE=InnoDB');
+    db = new pg.Client({ connectionString: testUrl.toString(), ssl });
+    await db.connect();
+    await db.query('CREATE TABLE eci_users (id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, username VARCHAR(100) NOT NULL UNIQUE, password_hash VARCHAR(200) NOT NULL)');
+    await db.query('CREATE TABLE eci_sessions (token_hash CHAR(64) PRIMARY KEY, user_id BIGINT NOT NULL REFERENCES eci_users(id) ON DELETE CASCADE, expires_at TIMESTAMPTZ NOT NULL)');
+    await db.query('CREATE TABLE eci_revision (id SMALLINT PRIMARY KEY, version BIGINT NOT NULL)');
     await db.query('INSERT INTO eci_revision VALUES (1, 7)');
-    await db.query('CREATE TABLE eci_records (kind VARCHAR(20) NOT NULL, id VARCHAR(100) NOT NULL, payload JSON NOT NULL, PRIMARY KEY(kind,id)) ENGINE=InnoDB');
+    await db.query('CREATE TABLE eci_records (kind VARCHAR(20) NOT NULL, id VARCHAR(100) NOT NULL, payload JSONB NOT NULL, PRIMARY KEY(kind,id))');
     const salt = randomBytes(16).toString('hex');
-    await db.execute('INSERT INTO eci_users (username,password_hash) VALUES (?,?)', [admin, `${salt}:${scryptSync(pass,salt,64).toString('hex')}`]);
+    await db.query('INSERT INTO eci_users (username,password_hash) VALUES ($1,$2)', [admin, `${salt}:${scryptSync(pass,salt,64).toString('hex')}`]);
     const data = { materials: [{id:'m',name:'Bola',code:'',unit:'un',minimum:0}], movements: [{id:'v',materialId:'m',date:'2026-01-01',kind:'entrada',quantity:2,reference:'Compra',note:'',createdAt:'2026-01-01T12:00:00.000Z'}], students: [{id:'s',name:'Aluno',category:'Sub-15',birthDate:'',guardian:'',phone:'',active:true}], collaborators: [{id:'c',name:'Treinador',role:'Treinador',phone:'',email:'',active:true}], lessons: [{id:'l',date:'2026-01-01',title:'Aula',description:'Treino',category:'Sub-15',instructorId:'c',roster:[{id:'s',name:'Aluno'}],attendance:{s:'presente'}}] };
-    for (const [kind, rows] of Object.entries(data)) for (const row of rows) await db.execute('INSERT INTO eci_records VALUES (?,?,?)', [kind,row.id,JSON.stringify(row)]);
+    for (const [kind, rows] of Object.entries(data)) for (const row of rows) await db.query('INSERT INTO eci_records VALUES ($1,$2,$3::jsonb)', [kind,row.id,JSON.stringify(row)]);
     await migrateUsers(db); await migrateUsers(db);
-    const [migrated] = await db.query('SELECT role,active FROM eci_users');
-    assert.equal(migrated[0].role,'admin'); assert.equal(migrated[0].active,1);
+    const { rows: migrated } = await db.query('SELECT role,active FROM eci_users');
+    assert.equal(migrated[0].role,'admin'); assert.equal(migrated[0].active,true);
     const port = 40000 + Math.floor(Math.random()*20000);
-    server = spawn(process.execPath, ['src/server.js'], { env: { ...process.env, DB_NAME:name, PORT:String(port), HOST:'127.0.0.1', ALLOWED_ORIGINS:'http://localhost:5502' }, stdio:'ignore' });
+    server = spawn(process.execPath, ['src/server.js'], { env: { ...process.env, DATABASE_URL:testUrl.toString(), PORT:String(port), HOST:'127.0.0.1', ALLOWED_ORIGINS:'http://localhost:5502' }, stdio:'ignore' });
     const base = `http://127.0.0.1:${port}`;
     const headers = {'Content-Type':'application/json','X-ECI-Request':'1'};
     const req = (path, method='GET', body, token) => fetch(base+path,{method,headers:{...headers,...(token?{Authorization:`Bearer ${token}`}:{})},...(body === undefined ? {} : {body:JSON.stringify(body)})});
@@ -76,12 +81,12 @@ test('migração e gestão de usuários com MySQL isolado', { skip: process.env.
     const a2=await (await login(other,pass)).json();
     const simultaneous=await Promise.all([req(`/api/users/${adm.id}/active`,'PATCH',{active:false},a2.token),req(`/api/users/${otherId}/active`,'PATCH',{active:false},a.token)]);
     assert.equal(simultaneous.filter(response=>response.status===200).length,1);
-    const [remaining]=await db.query("SELECT COUNT(*) AS n FROM eci_users WHERE role='admin' AND active=1"); assert.equal(remaining[0].n,1);
-    const [records]=await db.query('SELECT COUNT(*) AS n FROM eci_records'); assert.ok(records[0].n>=5);
+    const { rows: remaining }=await db.query("SELECT COUNT(*)::int AS n FROM eci_users WHERE role='admin' AND active"); assert.equal(remaining[0].n,1);
+    const { rows: records }=await db.query('SELECT COUNT(*)::int AS n FROM eci_records'); assert.ok(records[0].n>=5);
   } finally {
     if(server) { server.kill(); await new Promise(resolve => server.once('exit',resolve)); }
     if(db) await db.end();
-    if (created) await root.query(`DROP DATABASE \`${name}\``);
+    if (created) await root.query(`DROP DATABASE ${name}`);
     await root.end();
   }
 });

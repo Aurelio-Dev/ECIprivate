@@ -1,13 +1,10 @@
 import 'dotenv/config';
-import mysql from 'mysql2/promise';
+import pg from 'pg';
 
-export const databaseName = process.env.DB_NAME || 'eci';
-if (!/^[a-zA-Z0-9_]+$/.test(databaseName)) throw new Error('DB_NAME inválido.');
-export const connectionOptions = {
-  host: process.env.DB_HOST || '127.0.0.1',
-  port: Number(process.env.DB_PORT || 3306),
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  timezone: 'Z',
-};
-export const pool = mysql.createPool({ ...connectionOptions, database: databaseName, connectionLimit: 10 });
+export const databaseUrl = process.env.DATABASE_URL;
+if (!databaseUrl) throw new Error('Defina DATABASE_URL no .env.');
+// O Supabase exige SSL. Com DB_SSL_CA, o certificado do servidor é conferido; DB_SSL=false serve para um Postgres local.
+export const ssl = process.env.DB_SSL === 'false'
+  ? false
+  : process.env.DB_SSL_CA ? { ca: process.env.DB_SSL_CA.replace(/\\n/g, '\n') } : { rejectUnauthorized: false };
+export const pool = new pg.Pool({ connectionString: databaseUrl, ssl, max: 10 });
