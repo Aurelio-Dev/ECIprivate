@@ -220,6 +220,8 @@ export function WebReferencePage({ slug = 'index' }: { slug?: string }) {
       renderedChildren.push(createElement('a', { key: `${key}-admin`, href: '/login.html', className: 'mobile-menu-link' }, 'Área administrativa'));
     }
     if (className.includes('select-all') && pixCopied) renderedChildren.push(createElement('span', { key: `${key}-copied`, role: 'status', style: { marginLeft: '0.5rem', color: '#059669' } }, 'Copiado!'));
+    // Sem loading="lazy", o React gera um <link rel="preload"> para cada <img> no HTML estático.
+    if (tag === 'img' && !/\b(site-brand-logo|hero-image)\b/.test(className)) { props.loading = 'lazy'; props.decoding = 'async'; }
     if (tag === 'input' || tag === 'img' || tag === 'br' || tag === 'hr' || tag === 'meta' || tag === 'link') return createElement(tag, props);
     return createElement(tag, props, ...renderedChildren);
   };
