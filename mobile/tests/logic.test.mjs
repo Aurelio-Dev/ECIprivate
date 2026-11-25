@@ -4,7 +4,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { validContact, contactForm, localTarget } from '../src/lib/logic.ts';
 import { emptyAdminData, recordMovement, kardex, createLesson, setAttendance, attendanceCounts } from '../src/lib/adminData.ts';
-import { seoPages, SITE_URL, organizationJsonLd } from '../src/data/seo.ts';
+import { seoPages, SITE_URL, organizationJsonLd, OG_IMAGE } from '../src/data/seo.ts';
 
 const pages = JSON.parse(readFileSync(new URL('../src/data/webPages.json', import.meta.url), 'utf8'));
 const originalPlaceholders = new Set(['SUA_IMAGEM_AQUI.png', 'camisa-titular.png', 'camisa-reserva.png', 'caneca.png']);
@@ -109,6 +109,16 @@ test('metadados de SEO cobrem todas as páginas web', () => {
     paths.add(seo.path);
   }
   assert.match(SITE_URL, /^https:\/\/www\.ecitapetininga\.com\.br$/);
+});
+
+test('imagem de Open Graph existe, tem 1200×630 e menos de 200 KB', () => {
+  const file = resolve('public', OG_IMAGE.url.replace(`${SITE_URL}/`, ''));
+  const jpeg = readFileSync(file);
+  assert.ok(jpeg.length < 200 * 1024, `imagem com ${Math.round(jpeg.length / 1024)} KB`);
+  let offset = 2;
+  while (offset < jpeg.length && !(jpeg[offset + 1] >= 0xc0 && jpeg[offset + 1] <= 0xc2)) offset += 2 + jpeg.readUInt16BE(offset + 2);
+  assert.deepEqual([jpeg.readUInt16BE(offset + 7), jpeg.readUInt16BE(offset + 5)], [OG_IMAGE.width, OG_IMAGE.height]);
+  assert.deepEqual([OG_IMAGE.width, OG_IMAGE.height], [1200, 630]);
 });
 
 test('sitemap.xml lista exatamente as páginas indexáveis e o robots.txt aponta para ele', () => {

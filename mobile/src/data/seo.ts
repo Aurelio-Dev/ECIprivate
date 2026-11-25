@@ -3,6 +3,15 @@
 // webPages.json é gerado pelo script Python; os metadados ficam aqui para não depender dele.
 
 export const SITE_URL = 'https://www.ecitapetininga.com.br';
+export const SITE_NAME = 'Esporte Clube Itapetininga';
+
+/** Imagem de compartilhamento (Open Graph e Twitter Card): escudo sobre o azul #061a4b. */
+export const OG_IMAGE = {
+  url: `${SITE_URL}/img/og-ecitapetininga.jpg`,
+  width: 1200,
+  height: 630,
+  alt: 'Escudo do Esporte Clube Itapetininga sobre fundo azul',
+};
 
 export type PageSeo = {
   /** Caminho publicado no build estático: "/" para a home e "/pagina.html" para as demais. */

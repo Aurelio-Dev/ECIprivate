@@ -2,7 +2,7 @@ import { createElement, useEffect, useState } from 'react';
 import type { FormEvent, MouseEvent, ReactNode } from 'react';
 import Head from 'expo-router/head';
 import webPages from '../data/webPages.json';
-import { absoluteUrl, organizationJsonLd, pageSeo } from '../data/seo';
+import { absoluteUrl, OG_IMAGE, organizationJsonLd, pageSeo, SITE_NAME } from '../data/seo';
 import WebAccessibility from './WebAccessibility';
 
 type Node = string | { tag: string; props: Record<string, unknown>; children: Node[] };
@@ -18,6 +18,7 @@ export function webSlugs() { return Object.keys(pages).filter(slug => !['index',
 export function WebReferencePage({ slug = 'index' }: { slug?: string }) {
   const page = pages[slug] || pages['404'];
   const seo = pageSeo(pages[slug] ? slug : '404');
+  const title = seo.title ?? page.title;
   const [modalOpen, setModalOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdown, setDropdown] = useState('');
@@ -229,10 +230,21 @@ export function WebReferencePage({ slug = 'index' }: { slug?: string }) {
   return <>
     <Head>
       <meta charSet="utf-8" />
-      <title>{seo.title ?? page.title}</title>
+      <title>{title}</title>
       {seo.description && <meta name="description" content={seo.description} />}
       {!seo.index && <meta name="robots" content="noindex,follow" />}
       {seo.index && seo.path && <link rel="canonical" href={absoluteUrl(seo.path)} />}
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content={SITE_NAME} />
+      <meta property="og:locale" content="pt_BR" />
+      <meta property="og:title" content={title} />
+      {seo.description && <meta property="og:description" content={seo.description} />}
+      {seo.path && <meta property="og:url" content={absoluteUrl(seo.path)} />}
+      <meta property="og:image" content={OG_IMAGE.url} />
+      <meta property="og:image:width" content={String(OG_IMAGE.width)} />
+      <meta property="og:image:height" content={String(OG_IMAGE.height)} />
+      <meta property="og:image:alt" content={OG_IMAGE.alt} />
+      <meta name="twitter:card" content="summary_large_image" />
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
