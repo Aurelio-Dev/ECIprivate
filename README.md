@@ -1,8 +1,8 @@
 # Esporte Clube Itapetininga
 
-Este repositório guarda o site original em HTML, CSS e JavaScript e a versão em React/React Native com Expo em [`mobile/`](mobile/README.md). A versão web preserva a estrutura e o visual original; Android e iOS usam uma apresentação React Native. Os arquivos da raiz servem como histórico e referência. `mobile/` inclui sua própria cópia do material necessário para executar e compilar.
+Este repositório contém a aplicação React/React Native com Expo em [`mobile/`](mobile/README.md) e a API MySQL em [`backend/`](backend/README.md). A referência visual do site anterior fica em `mobile/reference/`.
 
-Para trabalhar no aplicativo migrado:
+Para iniciar a aplicação:
 
 ```powershell
 cd mobile
@@ -10,6 +10,4 @@ npm ci
 npx expo start
 ```
 
-No terminal do Expo, use `w` para abrir a versão web ou um dispositivo configurado para Android/iOS. Para gerar as páginas web estáticas, execute `npm run build:web`. Os resultados dos testes e os limites da verificação estão em [`mobile/VERIFICACAO.md`](mobile/VERIFICACAO.md).
-
-O painel administrativo usa uma API com MySQL, configurada separadamente em [backend/README.md](backend/README.md). A integração precisa de configuração local e revisão de segurança antes do uso com dados reais.
+Use `w` para a versão web ou um dispositivo configurado para Android/iOS. Para gerar os arquivos web, execute `npm run build:web`. A API deve ser configurada e iniciada separadamente conforme [backend/README.md](backend/README.md).

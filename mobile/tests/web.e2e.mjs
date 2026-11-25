@@ -24,6 +24,7 @@ async function box(page, selector) {
 
 try {
   const context = await browser.newContext({ viewport: { width: 1536, height: 728 }, reducedMotion: 'reduce' });
+  if (process.env.ECI_TEST_API) await context.route('http://localhost:3333/api/**', route => route.continue({ url: route.request().url().replace('http://localhost:3333', process.env.ECI_TEST_API) }));
   const page = await context.newPage();
   await page.goto(`${base}/`, { waitUntil: 'domcontentloaded' });
   await page.locator('.hero-title').waitFor();
@@ -94,7 +95,7 @@ try {
   await page.locator('.login-submit').click();
   await page.waitForURL(/admin\.html$/);
   await page.getByRole('heading', { name: 'Almoxarifado' }).waitFor();
-  assert.equal(await page.locator('.admin-nav .eci-nav-button').count(), 3);
+  assert.equal(await page.locator('.admin-nav .eci-nav-button').count(), 4);
   assert.equal(await page.getByText('Agenda de jogos').count(), 0);
   await page.locator('.admin-nav .eci-nav-button').nth(1).click();
   await page.getByRole('button', { name: 'Criar aula' }).click();
@@ -180,6 +181,7 @@ try {
   await page.waitForURL(/login\.html$/);
 
   const mobile = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+  if (process.env.ECI_TEST_API) await mobile.route('http://localhost:3333/api/**', route => route.continue({ url: route.request().url().replace('http://localhost:3333', process.env.ECI_TEST_API) }));
   const mobilePage = await mobile.newPage();
   await mobilePage.goto(`${base}/`, { waitUntil: 'domcontentloaded' });
   await mobilePage.evaluate(() => document.fonts.ready);
@@ -201,7 +203,7 @@ try {
   await mobilePage.locator('.login-submit').click();
   await mobilePage.waitForURL(/admin\.html$/);
   await mobilePage.locator('.admin-topbar__menu').click();
-  assert.equal(await mobilePage.locator('.admin-nav .eci-nav-button:visible').count(), 3);
+  assert.equal(await mobilePage.locator('.admin-nav .eci-nav-button:visible').count(), 4);
   await mobilePage.locator('.admin-nav .eci-nav-button').nth(1).click();
   await mobilePage.getByRole('heading', { name: 'Diário de classe' }).waitFor();
   assert.equal(await mobilePage.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), true);

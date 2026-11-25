@@ -35,7 +35,7 @@ try {
     if (!username || username.length > 100 || password.length < 12 || password.length > 512) throw new Error('Informe usuário de até 100 caracteres e senha de 12 a 512 caracteres.');
     const salt = randomBytes(16).toString('hex');
     const hash = scryptSync(password, salt, 64).toString('hex');
-    await pool.execute('INSERT INTO eci_users (username, password_hash, role) VALUES (?, ?, 'admin')', [username, `${salt}:${hash}`]);
+    await pool.execute('INSERT INTO eci_users (username, password_hash, role) VALUES (?, ?, ?)', [username, `${salt}:${hash}`, 'admin']);
     console.log('Administrador criado.');
   }
 } catch (error) {
