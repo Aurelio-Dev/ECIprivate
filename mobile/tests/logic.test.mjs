@@ -110,3 +110,14 @@ test('metadados de SEO cobrem todas as páginas web', () => {
   }
   assert.match(SITE_URL, /^https:\/\/www\.ecitapetininga\.com\.br$/);
 });
+
+test('sitemap.xml lista exatamente as páginas indexáveis e o robots.txt aponta para ele', () => {
+  const sitemap = readFileSync(new URL('../public/sitemap.xml', import.meta.url), 'utf8');
+  const listed = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]).sort();
+  const indexable = Object.values(seoPages).filter(seo => seo.index).map(seo => `${SITE_URL}${seo.path}`).sort();
+  assert.deepEqual(listed, indexable);
+  const robots = readFileSync(new URL('../public/robots.txt', import.meta.url), 'utf8');
+  assert.match(robots, new RegExp(`^Sitemap: ${SITE_URL.replace(/\./g, '\\.')}/sitemap\\.xml$`, 'm'));
+  // As páginas com noindex precisam continuar rastreáveis para o robô ler a tag.
+  for (const line of robots.split('\n').filter(entry => entry.startsWith('Disallow:'))) assert.equal(line.trim(), 'Disallow: /_sitemap');
+});
