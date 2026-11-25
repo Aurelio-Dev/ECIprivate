@@ -2,6 +2,7 @@ import { createElement, useEffect, useState } from 'react';
 import type { FormEvent, MouseEvent, ReactNode } from 'react';
 import Head from 'expo-router/head';
 import webPages from '../data/webPages.json';
+import { absoluteUrl, pageSeo } from '../data/seo';
 import WebAccessibility from './WebAccessibility';
 
 type Node = string | { tag: string; props: Record<string, unknown>; children: Node[] };
@@ -16,6 +17,7 @@ export function webSlugs() { return Object.keys(pages).filter(slug => !['index',
 
 export function WebReferencePage({ slug = 'index' }: { slug?: string }) {
   const page = pages[slug] || pages['404'];
+  const seo = pageSeo(pages[slug] ? slug : '404');
   const [modalOpen, setModalOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdown, setDropdown] = useState('');
@@ -224,8 +226,10 @@ export function WebReferencePage({ slug = 'index' }: { slug?: string }) {
 
   return <>
     <Head>
-      <title>{page.title}</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta charSet="utf-8" />
+      <title>{seo.title ?? page.title}</title>
+      {seo.description && <meta name="description" content={seo.description} />}
+      {seo.path && <link rel="canonical" href={absoluteUrl(seo.path)} />}
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />

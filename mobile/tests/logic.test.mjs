@@ -4,6 +4,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { validContact, contactForm, localTarget } from '../src/lib/logic.ts';
 import { emptyAdminData, recordMovement, kardex, createLesson, setAttendance, attendanceCounts } from '../src/lib/adminData.ts';
+import { seoPages, SITE_URL } from '../src/data/seo.ts';
 
 const pages = JSON.parse(readFileSync(new URL('../src/data/webPages.json', import.meta.url), 'utf8'));
 const originalPlaceholders = new Set(['SUA_IMAGEM_AQUI.png', 'camisa-titular.png', 'camisa-reserva.png', 'caneca.png']);
@@ -92,4 +93,18 @@ test('todas as páginas públicas, imagens e links locais foram migrados', () =>
     }
   }
   assert.ok(!JSON.stringify(pages.index.body).includes('BOTÕES COM O MESMO TAMANHO E MAIORES'));
+});
+
+test('metadados de SEO cobrem todas as páginas web', () => {
+  const webPages = Object.keys(pages).filter(slug => !['login', 'admin'].includes(slug));
+  assert.deepEqual(Object.keys(seoPages).sort(), webPages.sort());
+  const paths = new Set();
+  for (const [slug, seo] of Object.entries(seoPages)) {
+    if (seo.description) assert.ok(seo.description.length <= 155, `${slug}: descrição com ${seo.description.length} caracteres`);
+    if (!seo.path) continue;
+    assert.equal(seo.path, slug === 'index' ? '/' : `/${slug}.html`, `${slug}: caminho inesperado`);
+    assert.ok(!paths.has(seo.path), `${slug}: caminho repetido`);
+    paths.add(seo.path);
+  }
+  assert.match(SITE_URL, /^https:\/\/www\.ecitapetininga\.com\.br$/);
 });
