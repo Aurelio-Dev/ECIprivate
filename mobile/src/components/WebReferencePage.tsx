@@ -8,6 +8,9 @@ type Node = string | { tag: string; props: Record<string, unknown>; children: No
 type Page = { title: string; bodyClass: string; body: Node[]; styles: string[] };
 const pages = webPages as Record<string, Page>;
 const textOf = (node: Node): string => typeof node === 'string' ? node : node.children.map(textOf).join('');
+const hasClass = (node: Node, name: string) => typeof node !== 'string' && String(node.props.className || '').split(' ').includes(name);
+const homeHeader = pages.index.body.find(node => hasClass(node, 'site-header'))!;
+const homeSupport = pages.index.body.find(node => typeof node !== 'string' && node.props.id === 'apoie-modal')!;
 
 export function webSlugs() { return Object.keys(pages).filter(slug => !['index', 'login', 'admin'].includes(slug)); }
 
@@ -134,19 +137,30 @@ export function WebReferencePage({ slug = 'index' }: { slug?: string }) {
     }
   };
 
-  const render = (node: Node, key: string): ReactNode => {
+  const render = (node: Node, key: string, sharedHeader = false): ReactNode => {
     if (typeof node === 'string') return node;
-    const { tag, children } = node;
+    let { tag } = node;
+    const { children } = node;
     const props: Record<string, unknown> = { ...node.props, key };
     const action = String(props.legacyAction || '');
     delete props.legacyAction;
     const id = String(props.id || '');
     const className = String(props.className || '');
+    if (sharedHeader && tag === 'a' && !props.href && action.includes('toggleDropdown')) {
+      const target = action.match(/toggleDropdown\(['"]([^'"]+)['"]\)/)?.[1];
+      tag = 'button';
+      props.type = 'button';
+      props['aria-expanded'] = dropdown === target;
+      props['aria-controls'] = target;
+    }
+    if (sharedHeader && slug !== 'index' && typeof props.href === 'string' && props.href.startsWith('#') && props.href !== '#apoie-modal') {
+      props.href = `/index.html${props.href}`;
+    }
 
     if (className.includes('accessibility-panel')) return null;
 
     if (className.split(' ').includes('site-header')) props.className = `${className}${scrolled ? ' header-scrolled' : ''}`;
-    if (props['data-nav-link'] !== undefined && typeof props.href === 'string') {
+    if (slug === 'index' && props['data-nav-link'] !== undefined && typeof props.href === 'string') {
       const target = activeSection === 'pilar-rendimento' ? 'categories' : activeSection;
       if (props.href === `#${target}` || props.href === `/index.html#${target}`) props.className = `${props.className || ''} is-active`;
     }
@@ -169,7 +183,7 @@ export function WebReferencePage({ slug = 'index' }: { slug?: string }) {
       props['aria-expanded'] = accessOpen;
       props.onClick = () => setAccessOpen(value => !value);
     }
-    if (props['data-modal-open'] !== undefined) props.onClick = (event: MouseEvent<HTMLElement>) => { event.preventDefault(); setModalOpen(true); };
+    if (props['data-modal-open'] !== undefined) props.onClick = (event: MouseEvent<HTMLElement>) => { event.preventDefault(); setMenuOpen(false); setModalOpen(true); };
     if (props['data-modal-close'] !== undefined) props.onClick = () => setModalOpen(false);
     if (action) props.onClick = (event: MouseEvent<HTMLElement>) => {
       if (tag === 'a' && props.href && action.includes('toggleDropdown')) { setDropdown(''); return; }
@@ -177,7 +191,7 @@ export function WebReferencePage({ slug = 'index' }: { slug?: string }) {
     };
     if (tag === 'a' && typeof props.href === 'string') {
       const href = props.href;
-      if (href === '#apoie-modal') props.onClick = (event: MouseEvent<HTMLElement>) => { event.preventDefault(); setModalOpen(true); };
+      if (href === '#apoie-modal') props.onClick = (event: MouseEvent<HTMLElement>) => { event.preventDefault(); setMenuOpen(false); setModalOpen(true); };
       else if (href.startsWith('#')) props.onClick = () => { setMenuOpen(false); setDropdown(''); };
     }
     if (props['data-mobile-menu-link'] !== undefined && !props.onClick) props.onClick = () => setMenuOpen(false);
@@ -196,7 +210,7 @@ export function WebReferencePage({ slug = 'index' }: { slug?: string }) {
       props.onKeyDown = (event: KeyboardEvent) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); void copyPix(); } };
     }
 
-    const renderedChildren = children.map((child, index) => render(child, `${key}-${index}`));
+    const renderedChildren = children.map((child, index) => render(child, `${key}-${index}`, sharedHeader));
     if (className.includes('site-header-main')) {
       renderedChildren.push(createElement('a', { key: `${key}-admin`, href: '/login.html', className: 'react-admin-entry', title: 'Entrar na área administrativa' }, 'Área administrativa'));
     }
@@ -215,10 +229,13 @@ export function WebReferencePage({ slug = 'index' }: { slug?: string }) {
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet" />
       <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+      {!page.styles.includes('/styles.css') && <link rel="stylesheet" href="/styles.css" />}
       {page.styles.map(href => <link key={href} rel="stylesheet" href={href} />)}
       <link rel="stylesheet" href="/site-react.css" />
     </Head>
-    {page.body.map((node, index) => render(node, `root-${index}`))}
+    {render(homeHeader, 'shared-header', true)}
+    {page.body.map((node, index) => hasClass(node, 'site-header') ? null : render(node, `root-${index}`))}
+    {!page.body.some(node => typeof node !== 'string' && node.props.id === 'apoie-modal') && render(homeSupport, 'shared-support')}
     <WebAccessibility />
   </>;
 }

@@ -3,6 +3,12 @@
 html, body, #root { height: auto !important; min-height: 100%; overflow-x: hidden; overflow-y: auto !important; }
 body { margin: 0; }
 .site-header-main { position: relative; }
+.site-header .site-nav button.top-nav-link { border: 0; background: transparent; cursor: pointer; }
+.site-header .menu-cascata { display: none; position: absolute; top: 100%; left: 0; margin-top: 15px; width: 250px; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, .2); z-index: 9999; overflow: hidden; }
+.site-header .menu-cascata.ativo { display: block; }
+.site-header .menu-cascata a { display: block; padding: 12px 20px; font-size: 14px; color: #1f2937; text-decoration: none; font-weight: 600; border-bottom: 1px solid #f3f4f6; text-transform: none; letter-spacing: normal; }
+.site-header .menu-cascata a:last-child { border-bottom: 0; }
+.site-header .menu-cascata a:hover, .site-header .menu-cascata a:focus-visible { background: #f3f4f6; color: #1e3a8a; }
 .react-admin-entry {
   position: absolute;
   top: calc(100% + 0.55rem);
