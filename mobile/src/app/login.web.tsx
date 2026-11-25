@@ -13,7 +13,7 @@ export default function WebLogin() {
   const [busy, setBusy] = useState(false);
   useEffect(() => {
     document.body.classList.add('login-page');
-    void getSession().then(session => { if (session) window.location.replace('/admin.html'); });
+    void getSession().then(session => { if (session) window.location.replace('/admin.html'); }).catch(cause => setError(cause.message));
     return () => document.body.classList.remove('login-page');
   }, []);
   const submit = async (event: FormEvent<HTMLFormElement>) => {
@@ -23,7 +23,7 @@ export default function WebLogin() {
     try {
       if (await login(usuario.trim(), senha, remember)) window.location.assign('/admin.html');
       else { setSenha(''); setError('Usuário ou senha incorretos. Verifique os dados e tente novamente.'); }
-    } catch { setError('Não foi possível iniciar a sessão neste navegador.'); }
+    } catch (cause) { setError(cause instanceof Error ? cause.message : 'Não foi possível iniciar a sessão.'); }
     finally { setBusy(false); }
   };
   return <>
@@ -52,7 +52,6 @@ export default function WebLogin() {
           <button className="login-submit" type="submit" disabled={busy}>{busy ? 'Entrando...' : 'Entrar no painel'}</button>
         </form>
         <p className="login-help">Esqueceu a senha? Procure a comissão administrativa do clube.</p>
-        <p className="login-demo"><strong>Ambiente de demonstração:</strong> usuário <code>admin</code>, senha <code>eci2025</code>.</p>
       </section>
     </main>
     <WebAccessibility />

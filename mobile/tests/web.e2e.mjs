@@ -2,8 +2,9 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { chromium } from 'playwright-core';
 
-const base = process.env.ECI_WEB_URL || 'http://127.0.0.1:5502';
-const original = process.env.ECI_ORIGINAL_URL || 'http://127.0.0.1:5501';
+const base = process.env.ECI_WEB_URL || 'http://localhost:5502';
+const original = process.env.ECI_ORIGINAL_URL || 'http://localhost:5501';
+if (process.env.ECI_TEST_DB_IS_DISPOSABLE !== 'yes' || !process.env.ECI_TEST_USER || !process.env.ECI_TEST_PASSWORD) throw new Error('Use um banco vazio e descartável e defina ECI_TEST_DB_IS_DISPOSABLE=yes, ECI_TEST_USER e ECI_TEST_PASSWORD.');
 const candidates = [
   process.env.CHROME_PATH,
   'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
@@ -85,11 +86,11 @@ try {
   await page.getByText('Mensagem enviada com sucesso! Entraremos em contato em breve.').waitFor();
 
   await page.goto(`${base}/login.html`, { waitUntil: 'domcontentloaded' });
-  await page.locator('#usuario').fill('admin');
+  await page.locator('#usuario').fill(process.env.ECI_TEST_USER);
   await page.locator('#senha').fill('incorreta');
   await page.locator('.login-submit').click();
   await page.getByText(/Usuário ou senha incorretos/).waitFor();
-  await page.locator('#senha').fill('eci2025');
+  await page.locator('#senha').fill(process.env.ECI_TEST_PASSWORD);
   await page.locator('.login-submit').click();
   await page.waitForURL(/admin\.html$/);
   await page.getByRole('heading', { name: 'Almoxarifado' }).waitFor();
@@ -157,6 +158,7 @@ try {
   await page.getByRole('group', { name: 'Frequência de Atleta A' }).getByRole('button', { name: 'Presente' }).click();
   await page.getByRole('group', { name: 'Frequência de Atleta B' }).getByRole('button', { name: 'Ausente' }).click();
   assert.equal(await page.getByRole('group', { name: 'Frequência de Atleta A' }).getByRole('button', { name: 'Presente' }).getAttribute('aria-pressed'), 'true');
+  await page.getByText('Dados carregados do servidor.').waitFor();
   await page.reload({ waitUntil: 'domcontentloaded' });
   await page.locator('.admin-nav .eci-nav-button').nth(1).click();
   await page.getByRole('heading', { name: 'Passe e domínio' }).waitFor();
@@ -194,8 +196,8 @@ try {
   assert.equal(await mobilePage.locator('[data-mobile-menu] a[href="/login.html"]').count(), 1);
   await mobilePage.locator('[data-mobile-menu] a[href="/login.html"]').click();
   await mobilePage.waitForURL(/login\.html$/);
-  await mobilePage.locator('#usuario').fill('admin');
-  await mobilePage.locator('#senha').fill('eci2025');
+  await mobilePage.locator('#usuario').fill(process.env.ECI_TEST_USER);
+  await mobilePage.locator('#senha').fill(process.env.ECI_TEST_PASSWORD);
   await mobilePage.locator('.login-submit').click();
   await mobilePage.waitForURL(/admin\.html$/);
   await mobilePage.locator('.admin-topbar__menu').click();

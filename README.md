@@ -12,4 +12,4 @@ npx expo start
 
 No terminal do Expo, use `w` para abrir a versão web ou um dispositivo configurado para Android/iOS. Para gerar as páginas web estáticas, execute `npm run build:web`. Os resultados dos testes e os limites da verificação estão em [`mobile/VERIFICACAO.md`](mobile/VERIFICACAO.md).
 
-O acesso administrativo é um **protótipo acadêmico local**. Não use as credenciais demonstrativas com dados reais.
+O painel administrativo usa uma API com MySQL, configurada separadamente em [backend/README.md](backend/README.md). A integração precisa de configuração local e revisão de segurança antes do uso com dados reais.

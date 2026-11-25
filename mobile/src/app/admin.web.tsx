@@ -1,3 +1,5 @@
+import { onSessionExpired } from '../lib/api';
+import Users from '../components/Users';
 import { useEffect, useMemo, useState } from 'react';
 import type { FormEvent, ReactNode } from 'react';
 import Head from 'expo-router/head';
@@ -10,12 +12,13 @@ import {
   quantityLabel, recordMovement, setAttendance, Student, today,
 } from '../lib/adminData';
 
-type Module = 'almoxarifado' | 'diario' | 'cadastros';
+type Module = 'almoxarifado' | 'diario' | 'cadastros' | 'usuarios';
 type Dialog = 'material' | 'movement' | 'lesson' | 'student' | 'collaborator' | null;
 const modules: { id: Module; number: string; name: string; caption: string }[] = [
   { id: 'almoxarifado', number: '01', name: 'Almoxarifado', caption: 'Materiais e Kardex' },
   { id: 'diario', number: '02', name: 'Diário de classe', caption: 'Aulas e frequência' },
   { id: 'cadastros', number: '03', name: 'Cadastros', caption: 'Alunos e colaboradores' },
+  { id: 'usuarios', number: '04', name: 'Usuários', caption: 'Acesso ao painel' },
 ];
 const freshMaterial = (): Material => ({ id: makeId(), name: '', code: '', unit: 'un', minimum: 0 });
 const freshStudent = (): Student => ({ id: makeId(), name: '', category: 'Sub-15', birthDate: '', guardian: '', phone: '', active: true });
@@ -34,6 +37,7 @@ function Stat({ value, label, note }: { value: number; label: string; note: stri
 
 export default function WebAdmin() {
   const [session, setSession] = useState<Session | null>(null);
+  useEffect(() => onSessionExpired(() => { setSession(null); window.location.replace('/login.html'); }), []);
   const [module, setModule] = useState<Module>('almoxarifado');
   const [navOpen, setNavOpen] = useState(false);
   const [dialog, setDialog] = useState<Dialog>(null);
@@ -47,11 +51,11 @@ export default function WebAdmin() {
   const [selectedLessonId, setSelectedLessonId] = useState('');
   const [registerTab, setRegisterTab] = useState<'students' | 'collaborators'>('students');
   const [query, setQuery] = useState('');
-  const { data, ready, error, update } = useAdminStore();
+  const { data, ready, error, saving, update, legacyAvailable, importLocal } = useAdminStore();
 
   useEffect(() => {
     document.body.classList.add('admin-page');
-    void getSession().then(current => { if (current) setSession(current); else window.location.replace('/login.html'); });
+    void getSession().then(current => { if (current) setSession(current); else window.location.replace('/login.html'); }).catch(() => window.location.replace('/login.html'));
     return () => document.body.classList.remove('admin-page');
   }, []);
   useEffect(() => { document.body.classList.toggle('admin-nav-aberta', navOpen); return () => document.body.classList.remove('admin-nav-aberta'); }, [navOpen]);
@@ -103,18 +107,19 @@ export default function WebAdmin() {
     update(current => ({ ...current, collaborators: current.collaborators.some(item => item.id === collaborator.id) ? current.collaborators.map(item => item.id === collaborator.id ? { ...collaborator, name: collaborator.name.trim() } : item) : [...current.collaborators, { ...collaborator, name: collaborator.name.trim() }] }));
     close(); setNotice('Cadastro do colaborador salvo.');
   };
-  const attendanceButton = (lesson: Lesson, athleteId: string, status: Attendance, label: string) => <button key={status} type="button" className={`eci-attendance-option ${lesson.attendance[athleteId] === status ? 'is-selected' : ''}`} aria-pressed={lesson.attendance[athleteId] === status} onClick={() => { update(current => setAttendance(current, lesson.id, athleteId, status)); setNotice('Frequência salva neste dispositivo.'); }}>{label}</button>;
+  const attendanceButton = (lesson: Lesson, athleteId: string, status: Attendance, label: string) => <button key={status} type="button" className={`eci-attendance-option ${lesson.attendance[athleteId] === status ? 'is-selected' : ''}`} aria-pressed={lesson.attendance[athleteId] === status} onClick={() => { update(current => setAttendance(current, lesson.id, athleteId, status)); setNotice('Frequência enviada para gravação.'); }}>{label}</button>;
 
   return <>
     <Head><title>{page.name} — Painel EC Itapetininga</title><meta name="robots" content="noindex,nofollow" /><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet" /><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" rel="stylesheet" /><link rel="stylesheet" href="/admin.css" /><link rel="stylesheet" href="/site-react.css" /><link rel="stylesheet" href="/admin-react.css" /></Head>
     {!session || !ready ? <p className="admin-react-loading">Verificando acesso...</p> : <>
       <a className="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
       <header className="admin-topbar"><button className="admin-topbar__menu" type="button" aria-expanded={navOpen} aria-controls="admin-nav" onClick={() => setNavOpen(value => !value)}>Menu</button><span className="admin-topbar__brand"><img src="/img/eci.png" alt="" width="36" height="36" /><span>EC Itapetininga</span></span><div className="admin-topbar__user"><span className="admin-topbar__greeting">Conectado como <strong>{session.usuario}</strong></span><button className="admin-topbar__logout" type="button" onClick={async () => { await logout(); window.location.replace('/login.html'); }}>Sair</button></div></header>
-      <div className="admin-shell"><nav className="admin-nav" id="admin-nav" aria-label="Módulos administrativos"><p className="eci-nav-eyebrow">OPERAÇÃO DO CLUBE</p><ul className="admin-nav__list">{modules.map(item => <li key={item.id}><button type="button" className={`admin-nav__link eci-nav-button ${module === item.id ? 'admin-nav__link--ativo' : ''}`} aria-current={module === item.id ? 'page' : undefined} onClick={() => { setModule(item.id); setNavOpen(false); setNotice(''); setQuery(''); }}><span className="eci-nav-number">{item.number}</span><span><strong>{item.name}</strong><small>{item.caption}</small></span></button></li>)}</ul></nav>
-        <main className="admin-main eci-main" id="conteudo"><div className="eci-page-heading"><div><p className="eci-eyebrow">GESTÃO INTERNA <span>/</span> {page.number}</p><h1 className="admin-title">{page.name}</h1><p className="eci-intro">{module === 'almoxarifado' ? 'Controle de materiais da base com saldo calculado a cada entrada e saída.' : module === 'diario' ? 'Crie uma aula com descrição e registre a frequência individual dos atletas.' : 'Mantenha os alunos e a equipe do clube organizados para o diário de classe.'}</p></div><img src="/img/eci.png" alt="" className="eci-heading-crest" /></div>
-          <div className="eci-local-note" role="note"><strong>REGISTRO LOCAL</strong><span>Os dados deste painel ficam salvos apenas neste navegador ou dispositivo.</span></div>
-          {(notice || error) && <p className="admin-react-notice" role="status">{notice || error}</p>}
+      <div className="admin-shell"><nav className="admin-nav" id="admin-nav" aria-label="Módulos administrativos"><p className="eci-nav-eyebrow">OPERAÇÃO DO CLUBE</p><ul className="admin-nav__list">{modules.filter(item => item.id !== 'usuarios' || session.perfil === 'admin').map(item => <li key={item.id}><button type="button" className={`admin-nav__link eci-nav-button ${module === item.id ? 'admin-nav__link--ativo' : ''}`} aria-current={module === item.id ? 'page' : undefined} onClick={() => { setModule(item.id); setNavOpen(false); setNotice(''); setQuery(''); }}><span className="eci-nav-number">{item.number}</span><span><strong>{item.name}</strong><small>{item.caption}</small></span></button></li>)}</ul></nav>
+        <main className="admin-main eci-main" id="conteudo"><div className="eci-page-heading"><div><p className="eci-eyebrow">GESTÃO INTERNA <span>/</span> {page.number}</p><h1 className="admin-title">{page.name}</h1><p className="eci-intro">{module === 'almoxarifado' ? 'Controle de materiais da base com saldo calculado a cada entrada e saída.' : module === 'diario' ? 'Crie uma aula com descrição e registre a frequência individual dos atletas.' : module === 'cadastros' ? 'Mantenha os alunos e a equipe do clube organizados para o diário de classe.' : 'Gerencie os acessos ao painel.'}</p></div><img src="/img/eci.png" alt="" className="eci-heading-crest" /></div>
+          <div className="eci-local-note" role="note"><strong>REGISTRO CENTRALIZADO</strong><span>{saving ? 'Salvando alterações no servidor...' : 'Dados carregados do servidor.'}</span></div>{legacyAvailable && <div className="eci-local-note"><span>Existem registros antigos neste navegador. Importe-os para o banco vazio.</span><button type="button" className="eci-button eci-button-outline" onClick={() => { if (window.confirm('Importar os registros deste navegador para o banco de dados vazio?')) importLocal(); }}>Importar registros locais</button></div>}
+          {(error || (!saving && notice)) && <p className="admin-react-notice" role="status">{error || notice}</p>}
 
+          {module === 'usuarios' && session.perfil === 'admin' && <Users />}
           {module === 'almoxarifado' && <><div className="eci-stats"><Stat value={data.materials.length} label="Materiais cadastrados" note="Itens do almoxarifado" /><Stat value={data.movements.length} label="Lançamentos" note="Entradas e saídas registradas" /><Stat value={lowStock} label="Abaixo do mínimo" note="Materiais que exigem atenção" /></div><div className="eci-section-head"><div><p className="eci-eyebrow">CONTROLE DE ESTOQUE</p><h2>Kardex de materiais</h2></div><div className="eci-actions"><button className="eci-button eci-button-outline" type="button" onClick={() => openMaterial()}>Cadastrar material</button><button className="eci-button" type="button" disabled={!selectedMaterial} onClick={() => { setMovement(freshMovement(currentMaterialId)); setDialog('movement'); setNotice(''); }}>Registrar entrada / saída</button></div></div>
             <div className="eci-workspace"><section className="eci-list-panel" aria-label="Materiais cadastrados"><div className="eci-panel-heading"><h3>Materiais</h3><span>{data.materials.length} cadastrados</span></div><label className="eci-search">Buscar material<input type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Nome ou código" /></label><div className="eci-select-list">{data.materials.filter(item => `${item.name} ${item.code}`.toLowerCase().includes(query.toLowerCase())).map(item => { const history = kardex(item.id, data.movements); return <button type="button" key={item.id} className={`eci-select-card ${currentMaterialId === item.id ? 'is-active' : ''}`} onClick={() => setSelectedMaterialId(item.id)}><span><strong>{item.name}</strong><small>{item.code || 'Sem código'} · {item.unit}</small></span><b>{quantityLabel(history.at(-1)?.balance || 0)}</b></button>; })}{!data.materials.length && <p className="eci-empty-small">Cadastre o primeiro material para iniciar o controle do estoque.</p>}</div></section><section className="eci-detail-panel" aria-label="Kardex do material selecionado">{selectedMaterial ? <><div className="eci-detail-top"><div><p className="eci-eyebrow">FICHA DE ESTOQUE</p><h3>{selectedMaterial.name}</h3><p>{selectedMaterial.code || 'Sem código de referência'} · Unidade: {selectedMaterial.unit}</p></div><button className="eci-text-button" type="button" onClick={() => openMaterial(selectedMaterial)}>Editar material</button></div><div className="eci-balance-strip"><div><small>SALDO ATUAL</small><strong>{quantityLabel(rows.at(-1)?.balance || 0)} <em>{selectedMaterial.unit}</em></strong></div><div><small>ESTOQUE MÍNIMO</small><strong>{quantityLabel(selectedMaterial.minimum)} <em>{selectedMaterial.unit}</em></strong></div></div><div className="eci-table-wrap"><table className="eci-table"><caption>Movimentações de {selectedMaterial.name}</caption><thead><tr><th>Data</th><th>Referência</th><th>Entrada</th><th>Saída</th><th>Saldo</th></tr></thead><tbody>{rows.map(row => <tr key={row.id}><td>{dateLabel(row.date)}</td><td><strong>{row.reference || 'Sem referência'}</strong>{row.note && <small>{row.note}</small>}</td><td>{row.kind === 'entrada' ? quantityLabel(row.quantity) : '—'}</td><td>{row.kind === 'saida' ? quantityLabel(row.quantity) : '—'}</td><td className="eci-table-balance">{quantityLabel(row.balance)}</td></tr>)}{!rows.length && <tr><td colSpan={5} className="eci-table-empty">Nenhuma movimentação registrada. Lance uma entrada para iniciar o Kardex.</td></tr>}</tbody></table></div></> : <div className="eci-empty"><strong>O Kardex começa aqui.</strong><p>Cadastre um material e registre a primeira entrada para acompanhar o saldo.</p></div>}</section></div></>}
 

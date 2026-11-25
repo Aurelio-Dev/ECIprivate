@@ -13,14 +13,14 @@ export default function Login() {
   const [visible, setVisible] = useState(false);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);
-  useEffect(() => { void getSession().then(session => { if (session) router.replace('/admin'); }); }, []);
+  useEffect(() => { void getSession().then(session => { if (session) router.replace('/admin'); }).catch(cause => setError(cause.message)); }, []);
   const submit = async () => {
     if (!usuario.trim() || !senha) { setError('Informe o usuário e a senha.'); return; }
     setBusy(true); setError('');
     try {
       if (await login(usuario, senha, remember)) router.replace('/admin');
       else { setSenha(''); setError('Usuário ou senha incorretos.'); }
-    } catch { setError('Não foi possível iniciar a sessão neste dispositivo.'); }
+    } catch (cause) { setError(cause instanceof Error ? cause.message : 'Não foi possível iniciar a sessão.'); }
     finally { setBusy(false); }
   };
   return <PageShell includeFooter={false}><Head><title>Entrar — EC Itapetininga</title><meta name="robots" content="noindex,nofollow" /></Head><View style={styles.layout}>
@@ -33,7 +33,6 @@ export default function Login() {
       <View style={styles.remember}><Switch accessibilityLabel="Manter conectado neste dispositivo" value={remember} onValueChange={setRemember} trackColor={{ true: colors.blue }} /><Text style={styles.rememberText}>Manter conectado neste dispositivo</Text></View>
       <Pressable disabled={busy} accessibilityRole="button" onPress={() => void submit()} style={[styles.submit, busy && { opacity: .6 }]}><Text style={styles.submitText}>{busy ? 'ENTRANDO...' : 'ENTRAR NO PAINEL'}</Text></Pressable>
       <Text style={styles.help}>Esqueceu a senha? Procure a comissão administrativa do clube.</Text>
-      <Text style={styles.demo}>Ambiente de demonstração: usuário admin, senha eci2025. Este acesso não protege dados reais.</Text>
     </View>
   </View></PageShell>;
 }

@@ -1,7 +1,9 @@
+import { onSessionExpired } from '../lib/api';
+import Users from '../components/Users';
 import { useEffect, useMemo, useState } from 'react';
 import { router } from 'expo-router';
 import Head from 'expo-router/head';
-import { Image, Modal, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Image, Modal, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { getSession, logout, Session } from '../lib/session';
 import { useAdminStore } from '../lib/useAdminStore';
 import { colors, fonts } from '../lib/theme';
@@ -11,12 +13,13 @@ import {
   quantityLabel, recordMovement, setAttendance, Student, today,
 } from '../lib/adminData';
 
-type Module = 'almoxarifado' | 'diario' | 'cadastros';
+type Module = 'almoxarifado' | 'diario' | 'cadastros' | 'usuarios';
 type Dialog = 'material' | 'movement' | 'lesson' | 'student' | 'collaborator' | null;
 const modules: { id: Module; name: string; number: string }[] = [
   { id: 'almoxarifado', name: 'ALMOXARIFADO', number: '01' },
   { id: 'diario', name: 'DIÁRIO DE CLASSE', number: '02' },
   { id: 'cadastros', name: 'CADASTROS', number: '03' },
+  { id: 'usuarios', name: 'USUÁRIOS', number: '04' },
 ];
 const freshMaterial = (): Material => ({ id: makeId(), name: '', code: '', unit: 'un', minimum: 0 });
 const freshStudent = (): Student => ({ id: makeId(), name: '', category: 'Sub-15', birthDate: '', guardian: '', phone: '', active: true });
@@ -39,6 +42,7 @@ function Metric({ value, label }: { value: number; label: string }) {
 
 export default function Admin() {
   const [session, setSession] = useState<Session | null>(null);
+  useEffect(() => onSessionExpired(() => { setSession(null); router.replace('/login'); }), []);
   const [module, setModule] = useState<Module>('almoxarifado');
   const [dialog, setDialog] = useState<Dialog>(null);
   const [notice, setNotice] = useState('');
@@ -50,9 +54,9 @@ export default function Admin() {
   const [selectedMaterialId, setSelectedMaterialId] = useState('');
   const [selectedLessonId, setSelectedLessonId] = useState('');
   const [registerTab, setRegisterTab] = useState<'students' | 'collaborators'>('students');
-  const { data, ready, error, update } = useAdminStore();
+  const { data, ready, error, saving, update, legacyAvailable, importLocal } = useAdminStore();
 
-  useEffect(() => { void getSession().then(current => { if (current) setSession(current); else router.replace('/login'); }); }, []);
+  useEffect(() => { void getSession().then(current => { if (current) setSession(current); else router.replace('/login'); }).catch(() => router.replace('/login')); }, []);
   const selectedMaterial = data.materials.find(item => item.id === selectedMaterialId) || data.materials[0];
   const selectedLesson = data.lessons.find(item => item.id === selectedLessonId) || data.lessons[0];
   const currentMaterialId = selectedMaterial?.id || '';
@@ -88,18 +92,19 @@ export default function Admin() {
     update(current => ({ ...current, collaborators: current.collaborators.some(item => item.id === collaborator.id) ? current.collaborators.map(item => item.id === collaborator.id ? { ...collaborator, name: collaborator.name.trim() } : item) : [...current.collaborators, { ...collaborator, name: collaborator.name.trim() }] }));
     setDialog(null); setNotice('Cadastro do colaborador salvo.');
   };
-  const attendanceChoice = (lesson: Lesson, athleteId: string, status: Attendance, label: string) => <Pressable key={status} accessibilityRole="button" accessibilityLabel={`${label} para ${lesson.roster.find(item => item.id === athleteId)?.name}`} accessibilityState={{ selected: lesson.attendance[athleteId] === status }} onPress={() => { update(current => setAttendance(current, lesson.id, athleteId, status)); setNotice('Frequência salva neste dispositivo.'); }} style={[styles.choice, lesson.attendance[athleteId] === status && styles.choiceActive]}><Text style={[styles.choiceText, lesson.attendance[athleteId] === status && styles.choiceTextActive]}>{label}</Text></Pressable>;
+  const attendanceChoice = (lesson: Lesson, athleteId: string, status: Attendance, label: string) => <Pressable key={status} accessibilityRole="button" accessibilityLabel={`${label} para ${lesson.roster.find(item => item.id === athleteId)?.name}`} accessibilityState={{ selected: lesson.attendance[athleteId] === status }} onPress={() => { update(current => setAttendance(current, lesson.id, athleteId, status)); setNotice('Frequência enviada para gravação.'); }} style={[styles.choice, lesson.attendance[athleteId] === status && styles.choiceActive]}><Text style={[styles.choiceText, lesson.attendance[athleteId] === status && styles.choiceTextActive]}>{label}</Text></Pressable>;
 
   if (!ready || !session) return <View style={styles.loading}><Text>Verificando acesso...</Text></View>;
   return <View style={styles.screen}><Head><title>Painel administrativo — EC Itapetininga</title></Head>
     <View style={styles.topbar}><Image source={require('../../assets/images/eci.png')} resizeMode="contain" style={styles.logo} /><Text style={styles.brand}>EC ITAPETININGA</Text><Pressable accessibilityRole="button" onPress={async () => { await logout(); router.replace('/login'); }}><Text style={styles.logout}>SAIR</Text></Pressable></View>
     <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={styles.page}>
       <Text style={styles.eyebrow}>GESTÃO INTERNA · DESDE 1950</Text><Text accessibilityRole="header" style={styles.title}>{modules.find(item => item.id === module)?.name}</Text>
-      <Text style={styles.intro}>{module === 'almoxarifado' ? 'Materiais da base com entradas, saídas e saldo em Kardex.' : module === 'diario' ? 'Aulas descritas e presença individual dos atletas.' : 'Alunos e colaboradores vinculados à operação do clube.'}</Text>
-      <View style={styles.moduleNav}>{modules.map(item => <Pressable key={item.id} onPress={() => { setModule(item.id); setNotice(''); }} accessibilityRole="button" accessibilityState={{ selected: module === item.id }} style={[styles.moduleButton, module === item.id && styles.moduleActive]}><Text style={[styles.moduleNumber, module === item.id && styles.moduleNumberActive]}>{item.number}</Text><Text style={[styles.moduleText, module === item.id && styles.moduleTextActive]}>{item.name}</Text></Pressable>)}</View>
-      <Text style={styles.localNote}>REGISTRO LOCAL · Dados salvos apenas neste dispositivo.</Text>
-      {!!(notice || error) && <Text accessibilityRole="alert" style={styles.notice}>{notice || error}</Text>}
+      <Text style={styles.intro}>{module === 'almoxarifado' ? 'Materiais da base com entradas, saídas e saldo em Kardex.' : module === 'diario' ? 'Aulas descritas e presença individual dos atletas.' : module === 'cadastros' ? 'Alunos e colaboradores vinculados à operação do clube.' : 'Gerencie os acessos ao painel.'}</Text>
+      <View style={styles.moduleNav}>{modules.filter(item => item.id !== 'usuarios' || session.perfil === 'admin').map(item => <Pressable key={item.id} onPress={() => { setModule(item.id); setNotice(''); }} accessibilityRole="button" accessibilityState={{ selected: module === item.id }} style={[styles.moduleButton, module === item.id && styles.moduleActive]}><Text style={[styles.moduleNumber, module === item.id && styles.moduleNumberActive]}>{item.number}</Text><Text style={[styles.moduleText, module === item.id && styles.moduleTextActive]}>{item.name}</Text></Pressable>)}</View>
+      <Text style={styles.localNote}>{saving ? 'Salvando alterações no servidor...' : 'REGISTRO CENTRALIZADO · Dados carregados do servidor.'}</Text>{legacyAvailable && <Button label="IMPORTAR REGISTROS LOCAIS" outline onPress={() => Alert.alert('Importar registros', 'Importar os registros deste dispositivo para o banco vazio?', [{ text: 'Cancelar', style: 'cancel' }, { text: 'Importar', onPress: importLocal }])} />}
+      {!!(error || (!saving && notice)) && <Text accessibilityRole="alert" style={styles.notice}>{error || notice}</Text>}
 
+      {module === 'usuarios' && session.perfil === 'admin' && <Users />}
       {module === 'almoxarifado' && <><View style={styles.metrics}><Metric value={data.materials.length} label="Materiais" /><Metric value={data.movements.length} label="Lançamentos" /><Metric value={lowStock} label="Abaixo do mínimo" /></View><View style={styles.sectionHead}><Text style={styles.sectionTitle}>KARDEX DE MATERIAIS</Text><Button label="+ MATERIAL" onPress={() => openMaterial()} /></View><View style={styles.card}><Text style={styles.cardTitle}>MATERIAIS CADASTRADOS</Text>{data.materials.map(item => { const history = kardex(item.id, data.movements); return <Pressable key={item.id} onPress={() => setSelectedMaterialId(item.id)} style={[styles.listItem, currentMaterialId === item.id && styles.listItemActive]}><View style={styles.flex}><Text style={styles.itemTitle}>{item.name}</Text><Text style={styles.itemMeta}>{item.code || 'Sem código'} · {item.unit}</Text></View><Text style={styles.itemBalance}>{quantityLabel(history.at(-1)?.balance || 0)}</Text></Pressable>; })}{!data.materials.length && <Text style={styles.emptyText}>Cadastre o primeiro material para iniciar o estoque.</Text>}</View>
         {selectedMaterial && <View style={styles.card}><Text style={styles.cardEyebrow}>FICHA DE ESTOQUE</Text><Text style={styles.detailTitle}>{selectedMaterial.name}</Text><Text style={styles.itemMeta}>Unidade: {selectedMaterial.unit} · Mínimo: {quantityLabel(selectedMaterial.minimum)}</Text><View style={styles.balance}><Text style={styles.balanceLabel}>SALDO ATUAL</Text><Text style={styles.balanceValue}>{quantityLabel(rows.at(-1)?.balance || 0)} {selectedMaterial.unit}</Text></View><View style={styles.actions}><Button label="REGISTRAR ENTRADA / SAÍDA" onPress={() => { setMovement(freshMovement(currentMaterialId)); setNotice(''); setDialog('movement'); }} /><Button label="EDITAR MATERIAL" outline onPress={() => openMaterial(selectedMaterial)} /></View><Text style={styles.cardTitle}>HISTÓRICO KARDEX</Text>{rows.map(row => <View key={row.id} style={styles.historyRow}><View style={styles.flex}><Text style={styles.itemTitle}>{dateLabel(row.date)} · {row.reference || 'Sem referência'}</Text><Text style={styles.itemMeta}>{row.note || (row.kind === 'entrada' ? 'Entrada de material' : 'Saída de material')}</Text></View><View><Text style={[styles.historyQuantity, row.kind === 'saida' && styles.historyOut]}>{row.kind === 'entrada' ? '+' : '−'}{quantityLabel(row.quantity)}</Text><Text style={styles.itemMeta}>Saldo {quantityLabel(row.balance)}</Text></View></View>)}{!rows.length && <Text style={styles.emptyText}>Nenhum lançamento. Registre uma entrada para iniciar o Kardex.</Text>}</View>}</>}
 
@@ -122,7 +127,7 @@ export default function Admin() {
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: '#f3f5f8' }, topbar: { minHeight: 66, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, gap: 9, backgroundColor: '#06183f' }, logo: { width: 38, height: 42 }, brand: { flex: 1, color: '#fff', fontFamily: fonts.condensed, fontSize: 20 }, logout: { padding: 9, borderWidth: 1, borderColor: '#fff', color: '#fff', fontFamily: fonts.condensed, fontSize: 16 },
   page: { width: '100%', maxWidth: 1000, alignSelf: 'center', padding: 18, paddingBottom: 80 }, eyebrow: { color: '#9a7200', fontFamily: fonts.bold, fontSize: 11, letterSpacing: 1.5 }, title: { marginTop: 5, color: '#06183f', fontFamily: fonts.display, fontSize: 44 }, intro: { color: colors.muted, fontFamily: fonts.body, fontSize: 14, lineHeight: 21, marginBottom: 16 },
-  moduleNav: { flexDirection: 'row', gap: 6, marginBottom: 16 }, moduleButton: { flex: 1, minWidth: 0, padding: 9, borderWidth: 1, borderColor: colors.border, backgroundColor: '#fff' }, moduleActive: { borderColor: '#0b2a6b', backgroundColor: '#0b2a6b' }, moduleNumber: { color: '#9a7200', fontFamily: fonts.bold, fontSize: 11 }, moduleNumberActive: { color: '#ffcc00' }, moduleText: { color: '#06183f', fontFamily: fonts.condensed, fontSize: 14 }, moduleTextActive: { color: '#fff' },
+  moduleNav: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginBottom: 16 }, moduleButton: { flex: 1, minWidth: 0, padding: 9, borderWidth: 1, borderColor: colors.border, backgroundColor: '#fff' }, moduleActive: { borderColor: '#0b2a6b', backgroundColor: '#0b2a6b' }, moduleNumber: { color: '#9a7200', fontFamily: fonts.bold, fontSize: 11 }, moduleNumberActive: { color: '#ffcc00' }, moduleText: { color: '#06183f', fontFamily: fonts.condensed, fontSize: 14 }, moduleTextActive: { color: '#fff' },
   localNote: { padding: 11, borderLeftWidth: 3, borderLeftColor: '#ffcc00', backgroundColor: '#fff8e2', color: '#364159', fontFamily: fonts.medium, fontSize: 11 }, notice: { marginTop: 10, padding: 10, backgroundColor: '#e8eef9', color: '#0b2a6b', fontFamily: fonts.medium, fontSize: 12 }, metrics: { flexDirection: 'row', gap: 7, marginTop: 16 }, metric: { flex: 1, minWidth: 0, padding: 10, borderTopWidth: 3, borderTopColor: '#ffcc00', backgroundColor: '#fff' }, metricValue: { color: '#06183f', fontFamily: fonts.display, fontSize: 29 }, metricLabel: { color: '#364159', fontFamily: fonts.medium, fontSize: 11 },
   sectionHead: { marginTop: 30, marginBottom: 10, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 10 }, sectionTitle: { color: '#06183f', fontFamily: fonts.condensed, fontSize: 23 }, button: { minHeight: 40, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 12, paddingVertical: 8, backgroundColor: '#ffcc00', borderWidth: 1, borderColor: '#ffcc00' }, buttonOutline: { backgroundColor: '#fff', borderColor: '#0b2a6b' }, buttonText: { color: '#06183f', fontFamily: fonts.condensed, fontSize: 14, textAlign: 'center' }, buttonOutlineText: { color: '#0b2a6b' }, disabled: { opacity: .45 },
   card: { marginTop: 10, padding: 14, borderWidth: 1, borderColor: colors.border, backgroundColor: '#fff' }, cardTitle: { marginBottom: 9, color: '#06183f', fontFamily: fonts.condensed, fontSize: 17 }, cardEyebrow: { color: '#9a7200', fontFamily: fonts.bold, fontSize: 10, letterSpacing: 1.2 }, detailTitle: { color: '#06183f', fontFamily: fonts.condensed, fontSize: 25 }, listItem: { paddingVertical: 11, paddingHorizontal: 7, borderBottomWidth: 1, borderBottomColor: colors.border, flexDirection: 'row', alignItems: 'center', gap: 8 }, listItemActive: { borderLeftWidth: 3, borderLeftColor: '#ffcc00', backgroundColor: '#eef3fc' }, flex: { flex: 1 }, itemTitle: { color: '#06183f', fontFamily: fonts.bold, fontSize: 13 }, itemMeta: { color: colors.muted, fontFamily: fonts.body, fontSize: 11, lineHeight: 17 }, itemBalance: { color: '#0b2a6b', fontFamily: fonts.condensed, fontSize: 19 }, emptyText: { paddingVertical: 14, color: colors.muted, fontFamily: fonts.body, fontSize: 13, lineHeight: 20 },

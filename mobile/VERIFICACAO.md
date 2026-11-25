@@ -1,5 +1,11 @@
 # Verificação da migração
 
+**Registro histórico:** os testes abaixo foram executados antes da introdução da API MySQL. O login demonstrativo e o armazenamento local descritos neste documento foram substituídos; este relatório não comprova a integração atual.
+
+## Integração MySQL — 25/11/2026
+
+Em uma instância MySQL 8 temporária e isolada, foram testados login, proteção das rotas, gravação e releitura de registros, conflito entre versões, bloqueio de saída com saldo negativo, alunos, colaboradores, aulas e frequência. O teste web completo passou com a API e o banco de teste, incluindo visual, navegação, contato simulado, VLibras, Kardex, diário, cadastros e menu móvel. A importação de registros locais foi testada no navegador com dados fictícios, preservando a cópia original. A compilação web, lint, verificação de tipos e testes de lógica também passaram. O aplicativo e a importação no Android/iOS ainda exigem validação em dispositivo real. A configuração do MySQL próprio do clube depende das credenciais locais e da criação do administrador.
+
 ## Implementação
 
 Na web, as páginas públicas são componentes React gerados da estrutura HTML original, com os mesmos estilos, imagens e documentos. Os scripts antigos não são executados; as interações foram reimplementadas em React. O painel administrativo tem apenas Almoxarifado, Diário de classe e Cadastros. As mesmas regras de dados do Kardex e da frequência são usadas na tela React Native para Android/iOS. O conteúdo público estrutural usa um layout nativo próprio.

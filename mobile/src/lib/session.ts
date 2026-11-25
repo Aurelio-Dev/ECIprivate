@@ -1,40 +1,31 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Platform } from 'react-native';
-import { validCredentials } from './logic';
+import { api, setToken } from './api';
 
-const KEY = 'eci_sessao_admin';
-let temporarySession: Session | null = null;
-
-export type Session = { usuario: string; entradaEm: string };
-
-function browserSession(): Storage | null {
-  if (Platform.OS !== 'web' || typeof window === 'undefined') return null;
-  try { return window.sessionStorage; } catch { return null; }
-}
+export type Session = { usuario: string; perfil: 'admin' | 'operator'; entradaEm: string };
 
 export async function getSession(): Promise<Session | null> {
-  if (temporarySession) return temporarySession;
-  try {
-    const raw = browserSession()?.getItem(KEY) ?? await AsyncStorage.getItem(KEY);
-    const value = raw ? JSON.parse(raw) : null;
-    return value && typeof value.usuario === 'string' ? value : null;
-  } catch { return null; }
+  try { return await api<Session>('/api/session'); }
+  catch (error) {
+    if ((error as Error & { status?: number }).status === 401) return null;
+    throw error;
+  }
 }
 
 export async function login(usuario: string, senha: string, remember: boolean): Promise<boolean> {
-  // Academic demo only. Production authentication requires a server.
-  if (!validCredentials(usuario, senha)) return false;
-  const session = { usuario: 'admin', entradaEm: new Date().toISOString() };
-  temporarySession = session;
-  await AsyncStorage.removeItem(KEY);
-  browserSession()?.removeItem(KEY);
-  if (remember) await AsyncStorage.setItem(KEY, JSON.stringify(session));
-  else browserSession()?.setItem(KEY, JSON.stringify(session));
-  return true;
+  try {
+    const result = await api<Session & { token?: string }>('/api/login', {
+      method: 'POST',
+      body: JSON.stringify({ usuario, senha, remember, native: Platform.OS !== 'web' }),
+    });
+    if (result.token) await setToken(result.token, remember);
+    return true;
+  } catch (error) {
+    if ((error as Error & { status?: number }).status === 401) return false;
+    throw error;
+  }
 }
 
 export async function logout() {
-  temporarySession = null;
-  browserSession()?.removeItem(KEY);
-  await AsyncStorage.removeItem(KEY);
+  try { await api('/api/logout', { method: 'POST' }); }
+  finally { await setToken(null); }
 }

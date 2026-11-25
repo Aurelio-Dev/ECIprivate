@@ -1,9 +1,5 @@
 export type ContactValues = { name: string; email: string; subject: string; message: string };
 
-export function validCredentials(usuario: string, senha: string): boolean {
-  return usuario.trim() === 'admin' && senha === 'eci2025';
-}
-
 export function validContact(values: ContactValues): boolean {
   return !!values.name.trim() && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim()) && !!values.message.trim();
 }

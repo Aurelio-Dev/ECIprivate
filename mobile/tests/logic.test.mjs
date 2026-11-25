@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { validCredentials, validContact, contactForm, localTarget } from '../src/lib/logic.ts';
+import { validContact, contactForm, localTarget } from '../src/lib/logic.ts';
 import { emptyAdminData, recordMovement, kardex, createLesson, setAttendance, attendanceCounts } from '../src/lib/adminData.ts';
 
 const pages = JSON.parse(readFileSync(new URL('../src/data/webPages.json', import.meta.url), 'utf8'));
@@ -17,13 +17,6 @@ function nodes(page) {
   page.body.forEach(walk);
   return found;
 }
-
-test('login demonstrativo valida credenciais sem aceitar variações', () => {
-  assert.equal(validCredentials('admin', 'eci2025'), true);
-  assert.equal(validCredentials(' admin ', 'eci2025'), true);
-  assert.equal(validCredentials('admin', 'outra'), false);
-  assert.equal(validCredentials('Admin', 'eci2025'), false);
-});
 
 test('contato valida e serializa os campos enviados ao FormSubmit', () => {
   const values = { name: ' Aurelio ', email: 'aurelio@example.com', subject: 'Inscrição na base', message: 'Olá!' };
