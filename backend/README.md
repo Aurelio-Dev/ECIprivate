@@ -22,6 +22,19 @@ No aplicativo nativo, `localhost` representa o próprio aparelho. Para desenvolv
 
 Para uso pela internet, é necessário publicar a API em infraestrutura adequada, usar HTTPS, configurar `COOKIE_SECURE=true`, restringir origens, proteger a rede do banco, realizar backups e revisar autenticação, permissões e privacidade. Os cookies web usam `SameSite=Strict`: hospede a API e o site sob o mesmo site ou configure um proxy no domínio do site. Não coloque a string de conexão do banco no site, no aplicativo ou em variáveis `EXPO_PUBLIC_*`. O código atual é uma base de desenvolvimento e ainda requer revisão de segurança e testes em aparelhos antes de uso com dados pessoais reais.
 
+## Publicação na Vercel
+
+Na Vercel, a API roda como função junto com o site, no mesmo domínio. Por isso o cookie de sessão funciona sem proxy. O arquivo `api/index.mjs`, na raiz do repositório, só reexporta o app de `backend/src/server.js`, e o `vercel.json` encaminha todas as rotas `/api/*` para ele. Quando a variável `VERCEL` existe, que a própria Vercel define, o `server.js` não abre porta e passa a considerar o IP real do visitante no limite de tentativas de login.
+
+Variáveis do projeto na Vercel (Settings > Environment Variables):
+
+- `DATABASE_URL`: a string do **Transaction pooler** do Supabase (porta `6543`), com a senha. No computador continua a do Session pooler (porta `5432`).
+- `DB_SSL=true` e `DB_POOL_MAX=2`. Cada instância da função abre o próprio pool, e um número baixo evita esgotar as conexões do Supabase.
+- `ALLOWED_ORIGINS=https://eci-self.vercel.app` e `COOKIE_SECURE=true`.
+- `EXPO_PUBLIC_API_URL=https://eci-self.vercel.app`. Ela é lida no build do site; se for alterada, é preciso fazer um novo deploy.
+
+O controle de tentativas de login fica na memória de cada instância. Na Vercel ele vale por instância e é zerado quando a função reinicia, então protege menos do que no computador.
+
 ## Migração de uma instalação existente
 
 Antes de atualizar a API, pare as gravações, faça uma cópia de segurança completa do banco e confirme que ela pode ser restaurada. Na pasta `backend`, confira se o `.env` aponta para o banco correto e execute `npm run migrate`. O comando acrescenta `role` e `active` a `eci_users` sem apagar nem substituir tabelas. Todos os usuários anteriores recebem perfil administrador ativo, pois antes desta versão todos tinham esse acesso. Novos usuários recebem o perfil escolhido no cadastro; o padrão do banco para inserções sem perfil é operador. Senhas, sessões, revisão e dados dos módulos são preservados. Reinicie a API após migrar. `npm run setup` também executa a migração em instalações existentes e cria o primeiro administrador apenas quando não há usuários.

@@ -8,6 +8,8 @@ import { emptyData, validateData } from './validation.js';
 const app = express();
 const allowed = (process.env.ALLOWED_ORIGINS || 'http://localhost:8081').split(',').map(s => s.trim());
 app.disable('x-powered-by');
+// Na Vercel a requisição chega por um proxy; sem isso, req.ip seria o mesmo para todos e o limite de tentativas de login bloquearia todo mundo junto.
+if (process.env.VERCEL) app.set('trust proxy', 1);
 app.use(helmet());
 app.use(cors({ origin(origin, cb) { cb(null, !origin || allowed.includes(origin)); }, credentials: true, allowedHeaders: ['Content-Type', 'Authorization', 'X-ECI-Request'] }));
 app.use(express.json({ limit: '5mb' }));
@@ -175,5 +177,9 @@ app.use((err, req, res, next) => {
   if (!res.headersSent) res.status(500).json({ error: 'Não foi possível acessar o servidor.' });
 });
 
-const port = Number(process.env.PORT || 3333);
-app.listen(port, process.env.HOST || '127.0.0.1', () => console.log(`API ECI na porta ${port}`));
+// Na Vercel o app é exportado para api/index.mjs e não abre porta; no computador, npm start continua igual.
+if (!process.env.VERCEL) {
+  const port = Number(process.env.PORT || 3333);
+  app.listen(port, process.env.HOST || '127.0.0.1', () => console.log(`API ECI na porta ${port}`));
+}
+export default app;

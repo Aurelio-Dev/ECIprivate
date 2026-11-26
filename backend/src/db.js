@@ -7,4 +7,5 @@ if (!databaseUrl) throw new Error('Defina DATABASE_URL no .env.');
 export const ssl = process.env.DB_SSL === 'false'
   ? false
   : process.env.DB_SSL_CA ? { ca: process.env.DB_SSL_CA.replace(/\\n/g, '\n') } : { rejectUnauthorized: false };
-export const pool = new pg.Pool({ connectionString: databaseUrl, ssl, max: 10 });
+// Na Vercel cada instância da função abre o próprio pool; use DB_POOL_MAX baixo lá.
+export const pool = new pg.Pool({ connectionString: databaseUrl, ssl, max: Number(process.env.DB_POOL_MAX || 10) });

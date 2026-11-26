@@ -1,8 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "installCommand": "npm install --prefix mobile",
+  "installCommand": "npm install --prefix mobile && npm ci --prefix backend",
   "buildCommand": "npm run build:web --prefix mobile",
   "outputDirectory": "mobile/dist",
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [{ "source": "/api/:path*", "destination": "/api" }]
 }
